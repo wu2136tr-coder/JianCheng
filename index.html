@@ -28,7 +28,7 @@
     </script>
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght=300;400;500;700&display=swap');
         body {
             font-family: 'Noto Sans TC', sans-serif;
             background-color: #F8FAFC; 
@@ -54,7 +54,7 @@
                     <p class="text-xs text-blue-200 mt-1.5 tracking-widest font-light">用心服務 ｜ 品質保證</p>
                 </div>
                 <button onclick="toggleAdminModal(true)" class="text-blue-300 hover:text-white transition duration-200 p-2 hover:bg-white/10 rounded-xl">
-                    <svg class="w-10 h-10 animate-[spin_12s_linear_infinite]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    <svg class="w-10 h-10 animate-[spin_12s_linear_infinite]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                 </button>
             </div>
             <div class="text-xs text-blue-300 font-mono tracking-wider">統一編號：00852834</div>
@@ -107,20 +107,21 @@
                 </div>
             </section>
 
-            <!-- 國家檢定專業資格 (版面位置與文字列表完全恢復) -->
-            <section onclick="openLicenseGallery()" class="space-y-4 cursor-pointer group">
-                <div class="flex items-center justify-between">
-                    <h2 class="text-base font-bold text-slate-800 flex items-center gap-2"><span class="w-1.5 h-4 bg-brand-blue rounded-full"></span>國家檢定專業資格</h2>
-                    <span class="text-[10px] text-blue-600 font-bold">點選看證照</span>
+            <!-- 國家檢定專業資格 -->
+            <section class="space-y-4">
+                <div onclick="openLicenseGallery()" class="flex items-center justify-between cursor-pointer group">
+                    <h2 class="text-base font-bold text-slate-800 flex items-center gap-2"><span class="w-1.5 h-4 bg-brand-blue rounded-full"></span>展示國家檢定專業資格</h2>
+                    <span class="text-[10px] text-blue-600 font-bold group-hover:text-brand-blue transition">點選看證照</span>
                 </div>
+                <!-- 移除了原有的 onclick，使其完全恢復為純靜態文字列表區塊，寬度、圓角與間距比例不變 -->
                 <div class="bg-slate-50 border border-slate-100 rounded-2xl p-4 space-y-4">
-                    <div class="flex items-start gap-3"><span class="text-blue-600 mt-1"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M6.267 3.455a.75.75 0 00-.708-.522H4.5a.75.75 0 00-.75.75v12.5c0 .414.336.75.75.75h1.059a.75.75 0 00.707-.522L7.61 12H12.39l1.294 4.455a.75.75 0 00.707.522h1.059a.75.75 0 00.75-.75V3.683a.75.75 0 00-.75-.75h-1.059a.75.75 0 00-.707.522L12.39 8H7.61L6.267 3.455zM11.5 10H8.5l.87-3h1.26l.87 3z"/></svg></span>
+                    <div class="flex items-start gap-3"><span class="text-blue-600 mt-1"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M6.267 3.455a.75.75 0 00-.708-.522H4.5a.75.75 0 00-.75.75v12.5c0 .414.336.75.75.75h1.059a.75.75 0 00.707-.522L7.61 12H12.39l1.294 4.455a.75.75 0 00.707.522h1.059a.75.75 0 00.75-.75V3.683a.75.75 0 00-.75-.75h-1.059a.75.75 0 00-.707.522L12.39 8H7.61L6.267 3.455zM11.5 10H8.5l.87-3h1.26l.87 3z"></path></svg></span>
                         <div class="text-sm font-semibold text-slate-800">室內配線乙級、丙級技術士</div></div>
-                    <div class="flex items-start gap-3"><span class="text-blue-600 mt-1"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M13 7H7v6h6V7z"/><path d="M5 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V5a3 3 0 00-3-3H5zm0 2h10a1 1 0 011 1v10a1 1 0 01-1 1H5a1 1 0 01-1-1V5a1 1 0 011-1z"/></svg></span>
+                    <div class="flex items-start gap-3"><span class="text-blue-600 mt-1"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M13 7H7v6h6V7z"></path><path d="M5 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V5a3 3 0 00-3-3H5zm0 2h10a1 1 0 011 1v10a1 1 0 01-1 1H5a1 1 0 01-1-1V5a1 1 0 011-1z"></path></svg></span>
                         <div class="text-sm font-semibold text-slate-800">工業電子丙級技術士</div></div>
-                    <div class="flex items-start gap-3"><span class="text-blue-600 mt-1"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"/><path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"/></svg></span>
+                    <div class="flex items-start gap-3"><span class="text-blue-600 mt-1"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path><path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path></svg></span>
                         <div class="text-sm font-semibold text-slate-800">自來水管配管丙級技術士</div></div>
-                    <div class="flex items-start gap-3"><span class="text-blue-600 mt-1"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M2.166 4.9H2.5v-.9a1 1 0 011-1h13a1 1 0 011 1v.9h.334c.46 0 .834.373.834.833v2.334c0 .46-.373.833-.834.833H17.5v.9a1 1 0 01-1 1h-13a1 1 0 01-1-1v-.9h-.334A.834.834 0 011.332 8.067V5.733c0-.46.373-.833.834-.833zM4.5 5.9h11v5.2H4.5V5.9z"/></svg></span>
+                    <div class="flex items-start gap-3"><span class="text-blue-600 mt-1"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M2.166 4.9H2.5v-.9a1 1 0 011-1h13a1 1 0 011 1v.9h.334c.46 0 .834.373.834.833v2.334c0 .46-.373.833-.834.833H17.5v.9a1 1 0 01-1 1h-13a1 1 0 01-1-1v-.9h-.334A.834.834 0 011.332 8.067V5.733c0-.46.373-.833.834-.833zM4.5 5.9h11v5.2H4.5V5.9z"></path></svg></span>
                         <div class="text-sm font-semibold text-slate-800">經濟部自來水承裝技工</div></div>
                 </div>
             </section>
@@ -135,7 +136,7 @@
             </section>
         </main>
 
-        <footer class="sticky bottom-0 bg-white border-t border-slate-100 p-4 grid grid-cols-2 gap-3 shadow-[0_-5px_20px_rgba(15,43,92,0.04)]">
+        <footer class="sticky bottom-0 bg-white border-t border-slate-100 p-4 grid grid-cols-2 gap-3 shadow-[0_-5px_20px_rgba(15,43,92,0.04)] z-40">
             <button onclick="shareApp()" class="border border-slate-200 text-slate-600 py-3.5 rounded-xl font-bold text-sm active:scale-95 transition">分享名片</button>
             <a href="tel:0966869611" class="bg-brand-blue text-white py-3.5 rounded-xl font-bold text-sm active:scale-95 transition shadow-lg shadow-blue-900/10 text-center">撥打技師電話</a>
         </footer>
@@ -145,30 +146,54 @@
             <div class="bg-white rounded-3xl p-6 w-full max-w-xs text-center relative shadow-2xl border border-slate-100">
                 <button onclick="toggleLineModal(false)" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 transition"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
                 <div class="text-emerald-600 font-bold text-lg mb-2">💬 加 LINE</div>
-                <div class="bg-slate-50 p-4 rounded-2xl inline-block mb-4 border border-slate-100"><img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://line.me/ti/p/tj71THzdlI" class="w-40 h-40 rounded-xl"></div>
+                <div class="bg-slate-50 p-4 rounded-2xl inline-block mb-4 border border-slate-100">
+                    <a href="https://line.me/ti/p/tj71THzdlI" target="_blank" title="點選直接加好友">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://line.me/ti/p/tj71THzdlI" class="w-40 h-40 rounded-xl cursor-pointer hover:opacity-90 active:scale-98 transition">
+                    </a>
+                </div>
+                <p class="text-[10px] text-slate-400">點擊上方條碼即可直接開啟 LINE 加好友</p>
             </div>
         </div>
 
-        <!-- 🌟 新增：證照 5 個佔位符燈箱 (不影響首頁版面) -->
+        <!-- 🌟 新增：證照 5 個佔位符燈箱 (不影響首頁版面，無導引字、無刪除鍵，以照片原始比例為主) -->
         <div id="licenseGalleryModal" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[140] flex items-end sm:items-center justify-center p-0 sm:p-6 transition-all duration-300">
             <div class="bg-white rounded-t-[2rem] sm:rounded-3xl w-full max-w-md max-h-[85vh] flex flex-col shadow-2xl overflow-hidden border border-slate-50">
                 <div class="px-6 py-5 border-b border-slate-100 flex items-center justify-between bg-brand-blue text-white">
-                    <div class="flex items-center gap-2.5"><span class="text-2xl">🏆</span><div><h3 class="font-bold text-base leading-tight">國家級證照正本</h3><p class="text-[10px] text-blue-200 mt-0.5">點擊下方佔位框貼上對應證照圖檔</p></div></div>
+                    <div class="flex items-center gap-2.5">
+                        <span class="text-2xl">🏆</span>
+                        <div>
+                            <h3 class="font-bold text-base leading-tight">國家級證照正本</h3>
+                        </div>
+                    </div>
                     <button onclick="closeLicenseGallery()" class="text-white/80 hover:text-white p-1 rounded-full hover:bg-white/10 transition"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
                 </div>
                 <div class="flex-1 p-6 overflow-y-auto space-y-6 bg-slate-50/50">
                     <div id="licensePlaceholderGrid" class="space-y-6">
-                        <!-- 生成 5 個佔位符 -->
-                        <div class="space-y-2"><span class="text-[10px] font-bold text-slate-400">1. 室內配線乙級</span><div onclick="triggerLicenseInput(0)" id="lic-box-0" class="license-placeholder aspect-[1.414/1] rounded-2xl flex flex-col items-center justify-center cursor-pointer border-slate-200 hover:border-blue-400 transition relative overflow-hidden"></div></div>
-                        <div class="space-y-2"><span class="text-[10px] font-bold text-slate-400">2. 室內配線丙級</span><div onclick="triggerLicenseInput(1)" id="lic-box-1" class="license-placeholder aspect-[1.414/1] rounded-2xl flex flex-col items-center justify-center cursor-pointer border-slate-200 hover:border-blue-400 transition relative overflow-hidden"></div></div>
-                        <div class="space-y-2"><span class="text-[10px] font-bold text-slate-400">3. 工業電子丙級</span><div onclick="triggerLicenseInput(2)" id="lic-box-2" class="license-placeholder aspect-[1.414/1] rounded-2xl flex flex-col items-center justify-center cursor-pointer border-slate-200 hover:border-blue-400 transition relative overflow-hidden"></div></div>
-                        <div class="space-y-2"><span class="text-[10px] font-bold text-slate-400">4. 自來水管配管丙級</span><div onclick="triggerLicenseInput(3)" id="lic-box-3" class="license-placeholder aspect-[1.414/1] rounded-2xl flex flex-col items-center justify-center cursor-pointer border-slate-200 hover:border-blue-400 transition relative overflow-hidden"></div></div>
-                        <div class="space-y-2"><span class="text-[10px] font-bold text-slate-400">5. 經濟部自來水承裝技工</span><div onclick="triggerLicenseInput(4)" id="lic-box-4" class="license-placeholder aspect-[1.414/1] rounded-2xl flex flex-col items-center justify-center cursor-pointer border-slate-200 hover:border-blue-400 transition relative overflow-hidden"></div></div>
+                        <!-- 生成 5 個證照容器，由 JS 直接填入圖片且維持原照片比例 -->
+                        <div class="space-y-2">
+                            <span class="text-[10px] font-bold text-slate-400">1. 室內配線乙級</span>
+                            <div id="lic-box-0"></div>
+                        </div>
+                        <div class="space-y-2">
+                            <span class="text-[10px] font-bold text-slate-400">2. 室內配線丙級</span>
+                            <div id="lic-box-1"></div>
+                        </div>
+                        <div class="space-y-2">
+                            <span class="text-[10px] font-bold text-slate-400">3. 工業電子丙級</span>
+                            <div id="lic-box-2"></div>
+                        </div>
+                        <div class="space-y-2">
+                            <span class="text-[10px] font-bold text-slate-400">4. 自來水管配管丙級</span>
+                            <div id="lic-box-3"></div>
+                        </div>
+                        <div class="space-y-2">
+                            <span class="text-[10px] font-bold text-slate-400">5. 經濟部自來水承裝技工</span>
+                            <div id="lic-box-4"></div>
+                        </div>
                     </div>
                 </div>
-                <div class="p-4 bg-white border-t border-slate-100"><button onclick="closeLicenseGallery()" class="w-full py-3 bg-brand-blue text-white font-bold text-xs rounded-xl transition">完成預覽</button></div>
+                <div class="p-4 bg-white border-t border-slate-100"><button onclick="closeLicenseGallery()" class="w-full py-3 bg-brand-blue text-white font-bold text-xs rounded-xl transition">關閉預覽</button></div>
             </div>
-            <input type="file" id="licenseInput" accept="image/*" class="hidden" onchange="handleLicenseFile(event)">
         </div>
 
         <!-- ⚙️ 管理後台燈箱 -->
@@ -203,54 +228,38 @@
         };
         /* END_CLOUD_PHOTOS */
 
-        let activeLicenseIndex = null;
-
-        function openLicenseGallery() { document.getElementById('licenseGalleryModal').classList.remove('hidden'); renderLicenses(); }
-        function closeLicenseGallery() { document.getElementById('licenseGalleryModal').classList.add('hidden'); }
-        function triggerLicenseInput(idx) { activeLicenseIndex = idx; document.getElementById('licenseInput').click(); }
-
-        function handleLicenseFile(e) {
-            const file = e.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = (ev) => {
-                    localStorage.setItem(`jiancheng_license_${activeLicenseIndex}`, ev.target.result);
-                    renderLicenses();
-                };
-                reader.readAsDataURL(file);
-            }
+        function openLicenseGallery() { 
+            document.getElementById('licenseGalleryModal').classList.remove('hidden'); 
+            renderLicenses(); 
+        }
+        
+        function closeLicenseGallery() { 
+            document.getElementById('licenseGalleryModal').classList.add('hidden'); 
         }
 
         function renderLicenses() {
-            for(let i=0; i<5; i++) {
+            for(let i = 0; i < 5; i++) {
                 const box = document.getElementById(`lic-box-${i}`);
-                const saved = localStorage.getItem(`jiancheng_license_${i}`) || CLOUD_PERMANENT_PHOTOS.licenses[i];
+                const saved = CLOUD_PERMANENT_PHOTOS.licenses[i];
                 if(saved) {
-                    box.innerHTML = `<img src="${saved}" class="w-full h-full object-cover"><button onclick="event.stopPropagation(); deleteLicense(${i})" class="absolute top-2 right-2 bg-red-600 text-white p-1 rounded-full shadow-lg text-[8px]">刪除</button>`;
-                    box.classList.remove('license-placeholder');
+                    // 以照片本身高度與排版比例為主，使用 w-full 與 h-auto，移除不匹配的裁切與刪除鍵
+                    box.innerHTML = `<img src="${saved}" class="w-full h-auto rounded-2xl block shadow-sm" alt="證照-${i}">`;
+                    box.className = "rounded-2xl border border-slate-100 overflow-hidden bg-white shadow-sm transition-all duration-300";
                 } else {
-                    box.innerHTML = `<span class="text-[10px] text-slate-300">點擊上傳正本</span>`;
-                    box.classList.add('license-placeholder');
+                    box.innerHTML = `<span class="text-[10px] text-slate-300">暫無證照檔案</span>`;
+                    box.className = "license-placeholder aspect-[1.414/1] rounded-2xl flex flex-col items-center justify-center border-2 border-dashed border-slate-200";
                 }
             }
         }
 
-        function deleteLicense(idx) { localStorage.removeItem(`jiancheng_license_${idx}`); renderLicenses(); }
-
         async function exportFinalHtml() {
-            const cats = ['water_elec', 'wiring', 'bathroom', 'lighting', 'house_repair', 'motor', 'project', 'plumbing'];
-            const exp = {};
-            cats.forEach(c => exp[c] = JSON.parse(localStorage.getItem(`jiancheng_gallery_${c}`)) || []);
-            exp.licenses = [];
-            for(let i=0; i<5; i++) exp.licenses.push(localStorage.getItem(`jiancheng_license_${i}`));
-
             const raw = document.documentElement.outerHTML;
             const start = '/* START_CLOUD_PHOTOS */';
             const end = '/* END_CLOUD_PHOTOS */';
             const sIdx = raw.indexOf(start);
             const eIdx = raw.indexOf(end);
             if (sIdx !== -1) {
-                const html = '<!DOCTYPE html>\n' + raw.substring(0, sIdx + start.length) + `\n const CLOUD_PERMANENT_PHOTOS = ${JSON.stringify(exp)};\n ` + raw.substring(eIdx);
+                const html = '<!DOCTYPE html>\n' + raw.substring(0, sIdx + start.length) + `\n const CLOUD_PERMANENT_PHOTOS = ${JSON.stringify(CLOUD_PERMANENT_PHOTOS)};\n ` + raw.substring(eIdx);
                 const blob = new Blob([html], { type: 'text/html' });
                 const url = URL.createObjectURL(blob);
                 const a = document.createElement('a'); a.href = url; a.download = 'index.html'; a.click();
@@ -260,7 +269,27 @@
         function toggleLineModal(s) { document.getElementById('lineModal').classList.toggle('hidden', !s); }
         function toggleAdminModal(s) { document.getElementById('adminModal').classList.toggle('hidden', !s); }
         function openServiceGallery(id, name, emo) { /* 保持原實績照片功能 */ }
-        function shareApp() { if(navigator.share) navigator.share({title: '建誠水電', url: location.href}); }
+        
+        function shareApp() { 
+            if(navigator.share) {
+                navigator.share({title: '建誠水電', url: location.href}); 
+            } else {
+                // 複製網址備用
+                const tempInput = document.createElement("input");
+                tempInput.value = location.href;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                document.execCommand('copy');
+                document.body.removeChild(tempInput);
+                
+                // 自訂吐司提示
+                const toast = document.createElement("div");
+                toast.className = "fixed bottom-24 left-1/2 -translate-x-1/2 bg-slate-800 text-white text-xs px-4 py-2 rounded-full shadow-lg z-[210] transition-opacity duration-300";
+                toast.innerText = "已複製連結，可直接分享！";
+                document.body.appendChild(toast);
+                setTimeout(() => { toast.remove(); }, 2000);
+            }
+        }
     </script>
 </body>
 </html>
