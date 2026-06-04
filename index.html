@@ -59,15 +59,21 @@
             </div>
             <div class="text-xs text-blue-300 font-mono tracking-wider">統一編號：00852834</div>
 
-            <div class="absolute -bottom-8 left-6 right-6 bg-white text-slate-800 rounded-2xl p-4 shadow-[0_10px_25px_rgba(15,43,92,0.1)] flex items-center justify-between border border-slate-50">
+            <!-- 負責人與聯絡功能卡片 -->
+            <div class="absolute -bottom-8 left-6 right-6 bg-white text-slate-800 rounded-2xl p-4 shadow-[0_10px_25px_rgba(15,43,92,0.1)] flex items-center justify-between border border-slate-50 gap-2">
                 <div>
                     <span class="text-[10px] text-slate-400 font-bold tracking-wider uppercase block">負責人 / 技術士</span>
                     <div class="text-xl font-bold text-slate-800 tracking-widest mt-0.5">王建智</div>
                 </div>
-                <a href="tel:0966869611" class="bg-emerald-500 text-white px-4 py-2.5 rounded-xl font-bold text-xs tracking-wider active:scale-95 transition flex items-center gap-2">
-                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
-                    0966-869-611
-                </a>
+                <div class="flex items-center gap-2">
+                    <button onclick="shareApp()" class="border border-slate-200 text-slate-600 px-5 py-2.5 rounded-xl font-bold text-[15px] active:scale-95 transition whitespace-nowrap">
+                        點擊分享名片
+                    </button>
+                    <a href="tel:0966869611" class="bg-emerald-500 text-white px-3 py-2.5 rounded-xl font-bold text-xs tracking-wider active:scale-95 transition flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
+                        0966-869-611
+                    </a>
+                </div>
             </div>
         </header>
 
@@ -113,7 +119,6 @@
                     <h2 class="text-base font-bold text-slate-800 flex items-center gap-2"><span class="w-1.5 h-4 bg-brand-blue rounded-full"></span>展示國家檢定專業資格</h2>
                     <span class="text-[10px] text-blue-600 font-bold group-hover:text-brand-blue transition">點選看證照</span>
                 </div>
-                <!-- 移除了原有的 onclick，使其完全恢復為純靜態文字列表區塊，寬度、圓角與間距比例不變 -->
                 <div class="bg-slate-50 border border-slate-100 rounded-2xl p-4 space-y-4">
                     <div class="flex items-start gap-3"><span class="text-blue-600 mt-1"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M6.267 3.455a.75.75 0 00-.708-.522H4.5a.75.75 0 00-.75.75v12.5c0 .414.336.75.75.75h1.059a.75.75 0 00.707-.522L7.61 12H12.39l1.294 4.455a.75.75 0 00.707.522h1.059a.75.75 0 00.75-.75V3.683a.75.75 0 00-.75-.75h-1.059a.75.75 0 00-.707.522L12.39 8H7.61L6.267 3.455zM11.5 10H8.5l.87-3h1.26l.87 3z"></path></svg></span>
                         <div class="text-sm font-semibold text-slate-800">室內配線乙級、丙級技術士</div></div>
@@ -128,18 +133,64 @@
 
             <!-- 位置資訊 -->
             <section class="space-y-4 pb-10">
-                <h2 class="text-base font-bold text-slate-800 flex items-center gap-2"><span class="w-1.5 h-4 bg-brand-blue rounded-full"></span>營業與儲料處所</h2>
+                <h2 class="text-base font-bold text-slate-800 flex items-center gap-2"><span class="w-1.5 h-4 bg-brand-blue rounded-full"></span>營業時間與地址</h2>
                 <div class="bg-slate-50 border border-slate-100 rounded-2xl p-4 flex flex-col gap-3">
+                    
+                    <!-- 營業時間表與費用明細（精確比率配置） -->
+                    <div class="text-xs text-slate-600 space-y-2 border-b border-slate-200/60 pb-3 mb-1">
+                        <div class="grid grid-cols-2 gap-x-4 gap-y-1.5 text-slate-700 font-medium">
+                            <!-- 星期一、二、三、四：時間前移 1/3 (w-[33%]) -->
+                            <div class="flex items-center">
+                                <span class="w-[33%]">星期一</span>
+                                <span class="font-bold text-slate-800">8:00-18:00</span>
+                            </div>
+                            <!-- 星期五、六、日：時間左移 1/3，右側保留空白間距 -->
+                            <div class="flex items-center">
+                                <span class="w-[33%]">星期五</span>
+                                <span class="font-bold text-slate-800">8:00-18:00</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-[33%]">星期二</span>
+                                <span class="font-bold text-slate-800">8:00-18:00</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-[33%]">星期六</span>
+                                <span class="font-bold text-slate-800">8:00-12:00</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-[33%]">星期三</span>
+                                <span class="font-bold text-slate-800">8:00-18:00</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-[33%]">星期日</span>
+                                <span class="font-bold text-slate-800">8:00-12:00</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-[33%]">星期四</span>
+                                <span class="font-bold text-slate-800">8:00-18:00</span>
+                            </div>
+                        </div>
+                        <div class="pt-2.5 border-t border-dashed border-slate-200 space-y-0.5 text-[11px] text-slate-500 font-medium">
+                            <div class="flex justify-between items-center bg-slate-100/50 py-0.5 pl-2 pr-0 rounded">
+                                <span class="text-slate-700 font-semibold">平日 22:00 ｜ 周六、日 12:00-18:00</span>
+                                <span class="font-bold text-brand-blue bg-blue-50 px-1.5 py-0.5 rounded text-[10px]">出工基本費 2000</span>
+                            </div>
+                            <div class="flex justify-between items-center bg-slate-100/50 py-0.5 pl-2 pr-0 rounded">
+                                <span class="text-slate-700 font-semibold">平日 00:00 ｜ 周六、日 18:00-20:00</span>
+                                <span class="font-bold text-brand-blue bg-blue-50 px-1.5 py-0.5 rounded text-[10px]">出工基本費 3000</span>
+                            </div>
+                            <div class="flex justify-between items-center bg-slate-100/50 py-0.5 pl-2 pr-0 rounded">
+                                <span class="text-slate-700 font-semibold">平日 02:00 ｜ 周六、日 20:00-24:00</span>
+                                <span class="font-bold text-brand-blue bg-blue-50 px-1.5 py-0.5 rounded text-[10px]">出工基本費 4000</span>
+                            </div>
+                        </div>
+                    </div>
                     <div class="text-sm font-semibold text-slate-800">台中市清水區中山路560之15號</div>
                     <a href="https://www.google.com/maps/search/?api=1&query=台中市清水區中山路560之15號" target="_blank" class="text-xs text-blue-600 font-bold">點擊開啟 Google 地圖 📍</a>
                 </div>
             </section>
         </main>
 
-        <footer class="sticky bottom-0 bg-white border-t border-slate-100 p-4 grid grid-cols-2 gap-3 shadow-[0_-5px_20px_rgba(15,43,92,0.04)] z-40">
-            <button onclick="shareApp()" class="border border-slate-200 text-slate-600 py-3.5 rounded-xl font-bold text-sm active:scale-95 transition">分享名片</button>
-            <a href="tel:0966869611" class="bg-brand-blue text-white py-3.5 rounded-xl font-bold text-sm active:scale-95 transition shadow-lg shadow-blue-900/10 text-center">撥打技師電話</a>
-        </footer>
 
         <!-- 燈箱：LINE QR Code -->
         <div id="lineModal" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[100] flex items-center justify-center p-6 transition-all duration-300">
@@ -155,7 +206,7 @@
             </div>
         </div>
 
-        <!-- 🌟 新增：證照 5 個佔位符燈箱 (不影響首頁版面，無導引字、無刪除鍵，以照片原始比例為主) -->
+        <!-- 🌟 證照 5 個佔位符燈箱 -->
         <div id="licenseGalleryModal" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[140] flex items-end sm:items-center justify-center p-0 sm:p-6 transition-all duration-300">
             <div class="bg-white rounded-t-[2rem] sm:rounded-3xl w-full max-w-md max-h-[85vh] flex flex-col shadow-2xl overflow-hidden border border-slate-50">
                 <div class="px-6 py-5 border-b border-slate-100 flex items-center justify-between bg-brand-blue text-white">
@@ -169,7 +220,7 @@
                 </div>
                 <div class="flex-1 p-6 overflow-y-auto space-y-6 bg-slate-50/50">
                     <div id="licensePlaceholderGrid" class="space-y-6">
-                        <!-- 生成 5 個證照容器，由 JS 直接填入圖片且維持原照片比例 -->
+                        <!-- 生成 5 個證照容器，維持原照片比例 -->
                         <div class="space-y-2">
                             <span class="text-[10px] font-bold text-slate-400">1. 室內配線乙級</span>
                             <div id="lic-box-0"></div>
@@ -193,6 +244,23 @@
                     </div>
                 </div>
                 <div class="p-4 bg-white border-t border-slate-100"><button onclick="closeLicenseGallery()" class="w-full py-3 bg-brand-blue text-white font-bold text-xs rounded-xl transition">關閉預覽</button></div>
+            </div>
+        </div>
+
+        <!-- 🌟 行動名片圖檔燈箱 -->
+        <div id="cardShareModal" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[150] flex items-center justify-center p-6 transition-all duration-300">
+            <div class="bg-white rounded-3xl p-6 w-full max-w-xs text-center relative shadow-2xl border border-slate-100">
+                <button onclick="toggleCardModal(false)" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+                <div class="text-brand-blue font-bold text-lg mb-2">📇 行動名片圖檔</div>
+                <div class="bg-slate-50 p-2 rounded-2xl inline-block mb-4 border border-slate-100">
+                    <img src="https://wu2136tr-coder.github.io/JianCheng/pics/card.jpg" class="w-full h-auto rounded-xl shadow-sm block" alt="建誠水電工程行名片" onerror="this.src='https://placehold.co/400x250/0f2b5c/ffffff?text=建誠水電工程行';">
+                </div>
+                <p class="text-[11px] text-slate-500 font-medium mb-3">💡 長按上方名片大圖即可「儲存分享」給好友</p>
+                <button onclick="copyCardUrl()" class="w-full py-2.5 bg-brand-blue hover:bg-brand-blue/90 text-white font-bold text-xs rounded-xl transition">
+                    複製名片大圖連結
+                </button>
             </div>
         </div>
 
@@ -242,7 +310,6 @@
                 const box = document.getElementById(`lic-box-${i}`);
                 const saved = CLOUD_PERMANENT_PHOTOS.licenses[i];
                 if(saved) {
-                    // 以照片本身高度與排版比例為主，使用 w-full 與 h-auto，移除不匹配的裁切與刪除鍵
                     box.innerHTML = `<img src="${saved}" class="w-full h-auto rounded-2xl block shadow-sm" alt="證照-${i}">`;
                     box.className = "rounded-2xl border border-slate-100 overflow-hidden bg-white shadow-sm transition-all duration-300";
                 } else {
@@ -270,25 +337,32 @@
         function toggleAdminModal(s) { document.getElementById('adminModal').classList.toggle('hidden', !s); }
         function openServiceGallery(id, name, emo) { /* 保持原實績照片功能 */ }
         
+        // 行動名片圖檔燈箱開關
+        function toggleCardModal(s) {
+            document.getElementById('cardShareModal').classList.toggle('hidden', !s);
+        }
+
+        // 行動呼籲(CAT) 分享名片功能：彈出精美名片圖檔供儲存分享
         function shareApp() { 
-            if(navigator.share) {
-                navigator.share({title: '建誠水電', url: location.href}); 
-            } else {
-                // 複製網址備用
-                const tempInput = document.createElement("input");
-                tempInput.value = location.href;
-                document.body.appendChild(tempInput);
-                tempInput.select();
-                document.execCommand('copy');
-                document.body.removeChild(tempInput);
-                
-                // 自訂吐司提示
-                const toast = document.createElement("div");
-                toast.className = "fixed bottom-24 left-1/2 -translate-x-1/2 bg-slate-800 text-white text-xs px-4 py-2 rounded-full shadow-lg z-[210] transition-opacity duration-300";
-                toast.innerText = "已複製連結，可直接分享！";
-                document.body.appendChild(toast);
-                setTimeout(() => { toast.remove(); }, 2000);
-            }
+            toggleCardModal(true);
+        }
+
+        // 複製名片大圖 URL 到剪貼簿
+        function copyCardUrl() {
+            const cardUrl = "https://wu2136tr-coder.github.io/JianCheng/pics/card.jpg";
+            const tempInput = document.createElement("input");
+            tempInput.value = cardUrl;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            
+            // 自訂 Toast 提示
+            const toast = document.createElement("div");
+            toast.className = "fixed bottom-24 left-1/2 -translate-x-1/2 bg-slate-800 text-white text-xs px-4 py-2 rounded-full shadow-lg z-[210] transition-opacity duration-300";
+            toast.innerText = "已複製名片大圖連結！";
+            document.body.appendChild(toast);
+            setTimeout(() => { toast.remove(); }, 2000);
         }
     </script>
 </body>
