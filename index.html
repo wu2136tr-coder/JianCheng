@@ -1,852 +1,761 @@
-
-
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>吳慧華 | 融合 AI 科技的專業主辦會計</title>
-    <!-- Tailwind CSS CDN -->
+    <title>建誠水電工程行 - 王建智 ｜ 用心服務 品質保證</title>
+    
+    <meta property="og:title" content="建誠水電工程行 - 王建智">
+    <meta property="og:description" content="專業國家檢定合格！提供水電維修、室內配線、衛浴設備、房屋修繕、自來水管配置、水管疏通等全方位服務。">
+    <meta property="og:type" content="website">
+    
+    <!-- 引入 Tailwind CSS 進行精緻視覺排版 -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Noto Sans TC -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght=300;400;500;700;900&display=swap" rel="stylesheet">
-    <!-- FontAwesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Noto Sans TC', 'sans-serif'],
-                    },
                     colors: {
-                        beige: {
-                            50: '#FAF8F5',   // 主背景米白
-                            100: '#F5F0E6',  // 次級米白/卡其
-                            200: '#EADCC9',  // 邊框與裝飾線
-                            800: '#5C5246',  // 深茶色文字
-                            900: '#3D352B',  // 最深字體色
-                        },
-                        accent: '#B88E56',    // 優雅金色
+                        brand: {
+                            blue: '#0F2B5C',      /* 名片專屬信任深藍 */
+                            lightBlue: '#F1F5F9', /* 質感背景 Slate-100 */
+                            gold: '#D4AF37',      /* 高雅金色輔助 */
+                            dark: '#0F172A'       /* 舒適文字 Slate-900 */
+                        }
                     }
                 }
             }
         }
     </script>
+    
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        .beige-glow {
-            box-shadow: 0 4px 20px -2px rgba(184, 142, 86, 0.08);
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #F8FAFC; /* 使用極其舒適之微藍底色 */
         }
     </style>
 </head>
-<body class="bg-beige-50 text-stone-800 font-sans antialiased min-h-screen selection:bg-accent/20">
+<body class="flex justify-center min-h-screen">
 
-    <div class="w-full text-center py-10 md:py-14 bg-gradient-to-r from-beige-100 via-white to-beige-100 border-b border-beige-200">
-        <h1 class="text-3xl md:text-5xl font-black text-beige-900 tracking-widest uppercase">
-            EMPLOYMENT APPLICATION個人簡歷
-        </h1>
-    </div>
-
-    <header class="sticky top-0 z-50 bg-beige-50/80 backdrop-blur-md border-b border-beige-200">
-        <div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="#" class="text-xl font-bold text-beige-900 tracking-wider">吳慧華 <span class="text-accent text-sm font-medium">Hui-Hua</span></a>
-            <nav class="flex gap-4 md:gap-6 text-sm font-medium text-stone-600">
-                <a href="#about" class="hover:text-accent transition-colors">關於我</a>
-                <a href="#skills" class="hover:text-accent transition-colors">專業技能</a>
-                <a href="#portfolio" class="hover:text-accent transition-colors">實績作品</a>
-                <a href="#experience" class="hover:text-accent transition-colors">工作經歷</a>
-            </nav>
-        </div>
-    </header>
-
-    <main class="max-w-4xl mx-auto px-6 py-12 md:py-20 space-y-24">
-
-        <section id="hero" class="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12 pt-4">
-            <!-- 頭像區 (指向實際照片，若加載失敗則自動顯示後備大頭貼) -->
-            <div class="w-40 h-40 md:w-48 md:h-48 rounded-full border-4 border-beige-200 overflow-hidden flex-shrink-0 bg-white relative beige-glow self-center md:self-start">
-                <img 
-                    src="woman001.jpg" 
-                    alt="吳慧華的專業形象照" 
-                    class="w-full h-full object-cover"
-                    onerror="this.onerror=null; this.src='https://api.dicebear.com/7.x/initials/svg?seed=吳慧華';"
-                >
-            </div>
-            <!-- 文字定位 & 個人資訊網格 -->
-            <div class="text-center md:text-left space-y-5 flex-grow w-full">
+    <!-- 主框架：設定為符合 App 與社群分享寬度的黃金 448px (max-w-md) -->
+    <div class="w-full max-w-md bg-white shadow-[0_0_50px_rgba(15,43,92,0.08)] flex flex-col justify-between relative min-h-screen">
+        
+        <header class="bg-brand-blue text-white px-6 pt-10 pb-12 rounded-b-[2.5rem] relative shadow-lg">
+            <div class="flex justify-between items-start mb-4">
                 <div>
-                    <span class="inline-block px-3 py-1 bg-beige-100 text-accent text-xs font-semibold rounded-full tracking-wider uppercase mb-3">Senior Accountant & AI Pioneer</span>
-                    
-                    <!-- 姓名與基本英文標記 (已移除 54 歲年齡資訊) -->
-                    <div class="flex flex-col md:flex-row md:items-baseline justify-center md:justify-start gap-2.5">
-                        <h1 class="text-3xl md:text-5xl font-black text-beige-900 leading-tight">吳慧華</h1>
-                        <span class="text-sm md:text-base text-stone-500 font-medium tracking-wide">Wu Hui Hua | 女</span>
+                    <span class="text-[11px] font-bold tracking-wider bg-white/20 text-blue-100 px-3 py-1 rounded-full backdrop-blur-sm">
+                        📍 台中清水
+                    </span>
+                    <h1 class="text-3xl font-bold tracking-widest mt-2.5">建誠水電工程行</h1>
+                    <p class="text-xs text-blue-200 mt-1.5 tracking-widest font-light">用心服務 ｜ 品質保證</p>
+                </div>
+                <!-- 齒輪控制鈕：融合於版面中，精緻高雅 -->
+                <button onclick="toggleAdminModal(true)" class="text-blue-300 hover:text-white transition duration-200 p-2 hover:bg-white/10 rounded-xl" title="網頁照片管理後台">
+                    <svg class="w-10 h-10 animate-[spin_12s_linear_infinite]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- 統一編號標籤 -->
+            <div class="text-xs text-blue-300 font-mono tracking-wider">
+                統一編號：00852834
+            </div>
+
+            <!-- 浮動負責人卡片 (Floating Bio Card) -->
+            <div class="absolute -bottom-8 left-6 right-6 bg-white text-slate-800 rounded-2xl p-4 shadow-[0_10px_25px_rgba(15,43,92,0.1)] flex items-center justify-between border border-slate-50">
+                <div>
+                    <span class="text-[10px] text-slate-400 font-bold tracking-wider uppercase block">負責人 / 國家級技術士</span>
+                    <div class="text-xl font-bold text-slate-800 tracking-widest mt-0.5">王建智</div>
+                </div>
+                <a href="tel:0966869611" class="flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 active:scale-95 transition-all duration-200 text-white px-4 py-2.5 rounded-xl font-bold text-xs tracking-wider shadow-md shadow-emerald-500/10">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                    </svg>
+                    0966-869-611
+                </a>
+            </div>
+        </header>
+
+        <main class="px-6 pt-14 pb-24 flex-1 space-y-8">
+            
+            <!-- 快捷操作模組 (快速通訊、定位導航) -->
+            <section class="grid grid-cols-3 gap-3">
+                <a href="tel:0966869611" class="flex flex-col items-center justify-center p-3.5 bg-slate-50 border border-slate-100/80 rounded-2xl text-brand-blue hover:bg-slate-100 transition duration-200 active:scale-95 shadow-sm">
+                    <div class="p-2.5 bg-white rounded-xl shadow-sm mb-1.5 text-blue-600">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
                     </div>
-                    
-                    <p class="text-lg md:text-xl text-stone-600 leading-relaxed font-light mt-2">
-                        「融合傳統實務與 <span class="text-accent font-medium">AI 科技</span>的專業主辦會計」
+                    <span class="text-[11px] font-bold">電話諮詢</span>
+                </a>
+                
+                <button onclick="toggleLineModal(true)" class="flex flex-col items-center justify-center p-3.5 bg-emerald-50/50 border border-emerald-100/50 rounded-2xl text-emerald-800 hover:bg-emerald-50 transition duration-200 active:scale-95 shadow-sm">
+                    <div class="p-2.5 bg-white rounded-xl shadow-sm mb-1.5 text-emerald-500">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21.9 10.4c-.1-4-3.3-7.3-7.4-7.4-4.3-.1-7.8 3.1-7.8 7.4 0 1.9.7 3.6 1.9 5 .2.2.3.5.2.7l-.5 2.1c-.1.5.4.9.9.7l2.1-.8c.2-.1.5 0 .7.1 1 .5 2.1.8 3.3.8 4.3 0 7.7-3.4 7.7-7.7-1.1-.3-1-.9-1.1-.9z"/>
+                        </svg>
+                    </div>
+                    <span class="text-[11px] font-bold">加 LINE 溝通</span>
+                </button>
+
+                <a href="https://www.google.com/maps/search/?api=1&query=台中市清水區中山路560之15號" target="_blank" class="flex flex-col items-center justify-center p-3.5 bg-rose-50/50 border border-rose-100/50 rounded-2xl text-rose-800 hover:bg-rose-50 transition duration-200 active:scale-95 shadow-sm">
+                    <div class="p-2.5 bg-white rounded-xl shadow-sm mb-1.5 text-rose-500">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    </div>
+                    <span class="text-[11px] font-bold">工廠導航</span>
+                </a>
+            </section>
+
+            <!-- 專業服務項目 (具備專屬上傳/相簿功能) -->
+            <section class="space-y-4">
+                <div class="flex items-center justify-between">
+                    <h2 class="text-base font-bold text-slate-800 flex items-center gap-2">
+                        <span class="w-1.5 h-4 bg-brand-blue rounded-full"></span>
+                        專業工程服務項目
+                    </h2>
+                    <span class="text-[10px] bg-blue-50 text-blue-600 font-bold px-2 py-0.5 rounded-full animate-pulse">
+                        點選看工程實績
+                    </span>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-3">
+                    <button onclick="openServiceGallery('water_elec', '水電維修', '🔧')" class="bg-slate-50 border border-slate-100 hover:border-blue-200 hover:bg-blue-50/30 rounded-xl p-3.5 flex items-center gap-3 transition-all duration-200 active:scale-95 text-left w-full">
+                        <span class="text-xl">🔧</span>
+                        <span class="text-xs font-semibold text-slate-700">水電維修</span>
+                    </button>
+                    <button onclick="openServiceGallery('wiring', '室內配線', '🔌')" class="bg-slate-50 border border-slate-100 hover:border-blue-200 hover:bg-blue-50/30 rounded-xl p-3.5 flex items-center gap-3 transition-all duration-200 active:scale-95 text-left w-full">
+                        <span class="text-xl">🔌</span>
+                        <span class="text-xs font-semibold text-slate-700">室內配線</span>
+                    </button>
+                    <button onclick="openServiceGallery('bathroom', '衛浴設備', '🚿')" class="bg-slate-50 border border-slate-100 hover:border-blue-200 hover:bg-blue-50/30 rounded-xl p-3.5 flex items-center gap-3 transition-all duration-200 active:scale-95 text-left w-full">
+                        <span class="text-xl">🚿</span>
+                        <span class="text-xs font-semibold text-slate-700">衛浴設備</span>
+                    </button>
+                    <button onclick="openServiceGallery('lighting', '燈具安裝', '💡')" class="bg-slate-50 border border-slate-100 hover:border-blue-200 hover:bg-blue-50/30 rounded-xl p-3.5 flex items-center gap-3 transition-all duration-200 active:scale-95 text-left w-full">
+                        <span class="text-xl">💡</span>
+                        <span class="text-xs font-semibold text-slate-700">燈具安裝</span>
+                    </button>
+                    <button onclick="openServiceGallery('house_repair', '房屋修繕', '🏠')" class="bg-slate-50 border border-slate-100 hover:border-blue-200 hover:bg-blue-50/30 rounded-xl p-3.5 flex items-center gap-3 transition-all duration-200 active:scale-95 text-left w-full">
+                        <span class="text-xl">🏠</span>
+                        <span class="text-xs font-semibold text-slate-700">房屋修繕</span>
+                    </button>
+                    <button onclick="openServiceGallery('motor', '馬達安裝', '⚙️')" class="bg-slate-50 border border-slate-100 hover:border-blue-200 hover:bg-blue-50/30 rounded-xl p-3.5 flex items-center gap-3 transition-all duration-200 active:scale-95 text-left w-full">
+                        <span class="text-xl">⚙️</span>
+                        <span class="text-xs font-semibold text-slate-700">馬達安裝</span>
+                    </button>
+                    <button onclick="openServiceGallery('project', '工程承包', '📋')" class="bg-slate-50 border border-slate-100 hover:border-blue-200 hover:bg-blue-50/30 rounded-xl p-3.5 flex items-center gap-3 transition-all duration-200 active:scale-95 text-left w-full">
+                        <span class="text-xl">📋</span>
+                        <span class="text-xs font-semibold text-slate-700">工程承包</span>
+                    </button>
+                    <button onclick="openServiceGallery('plumbing', '水管疏通', '🌀')" class="bg-slate-50 border border-slate-100 hover:border-blue-200 hover:bg-blue-50/30 rounded-xl p-3.5 flex items-center gap-3 transition-all duration-200 active:scale-95 text-left w-full">
+                        <span class="text-xl">🌀</span>
+                        <span class="text-xs font-semibold text-slate-700">水管疏通</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- 專業檢定標誌與國家證照 -->
+            <section class="space-y-4">
+                <h2 class="text-base font-bold text-slate-800 flex items-center gap-2">
+                    <span class="w-1.5 h-4 bg-brand-blue rounded-full"></span>
+                    國家檢定專業資格
+                </h2>
+                <div class="bg-slate-50 border border-slate-100 rounded-2xl p-4 space-y-4">
+                    <!-- 證照 1 -->
+                    <div class="flex items-start gap-3">
+                        <span class="text-blue-600 mt-1 bg-white p-1.5 rounded-lg shadow-sm border border-slate-100">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6.267 3.455a.75.75 0 00-.708-.522H4.5a.75.75 0 00-.75.75v12.5c0 .414.336.75.75.75h1.059a.75.75 0 00.707-.522L7.61 12H12.39l1.294 4.455a.75.75 0 00.707.522h1.059a.75.75 0 00.75-.75V3.683a.75.75 0 00-.75-.75h-1.059a.75.75 0 00-.707.522L12.39 8H7.61L6.267 3.455zM11.5 10H8.5l.87-3h1.26l.87 3z" clip-rule="evenodd"></path></svg>
+                        </span>
+                        <div>
+                            <div class="text-sm font-semibold text-slate-800">室內配線乙級技術士</div>
+                            <p class="text-[10px] text-slate-400 mt-0.5">專業級電器施工、線路規劃、負載計算安全執照</p>
+                        </div>
+                    </div>
+                    <!-- 證照 2 -->
+                    <div class="flex items-start gap-3">
+                        <span class="text-blue-600 mt-1 bg-white p-1.5 rounded-lg shadow-sm border border-slate-100">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path></svg>
+                        </span>
+                        <div>
+                            <div class="text-sm font-semibold text-slate-800">室內配線丙級技術士</div>
+                            <p class="text-[10px] text-slate-400 mt-0.5">家用室內低壓用電、開關安裝配管安全守則認證</p>
+                        </div>
+                    </div>
+                    <!-- 證照 3 -->
+                    <div class="flex items-start gap-3">
+                        <span class="text-blue-600 mt-1 bg-white p-1.5 rounded-lg shadow-sm border border-slate-100">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M13 7H7v6h6V7z"></path><path fill-rule="evenodd" d="M5 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V5a3 3 0 00-3-3H5zm0 2h10a1 1 0 011 1v10a1 1 0 01-1 1H5a1 1 0 01-1-1V5a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
+                        </span>
+                        <div>
+                            <div class="text-sm font-semibold text-slate-800">工業電子丙級技術士</div>
+                            <p class="text-[10px] text-slate-400 mt-0.5">具備精密電子零組件與電路板檢測修護實務實力</p>
+                        </div>
+                    </div>
+                    <!-- 證照 4 -->
+                    <div class="flex items-start gap-3">
+                        <span class="text-blue-600 mt-1 bg-white p-1.5 rounded-lg shadow-sm border border-slate-100">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path><path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path></svg>
+                        </span>
+                        <div>
+                            <div class="text-sm font-semibold text-slate-800">自來水管配管丙級技術士</div>
+                            <p class="text-[10px] text-slate-400 mt-0.5">標準管材選配、套管配管與給水排水系統安全檢驗</p>
+                        </div>
+                    </div>
+                    <!-- 證照 5 -->
+                    <div class="flex items-start gap-3">
+                        <span class="text-blue-600 mt-1 bg-white p-1.5 rounded-lg shadow-sm border border-slate-100">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M2.166 4.9H2.5v-.9a1 1 0 011-1h13a1 1 0 011 1v.9h.334c.46 0 .834.373.834.833v2.334c0 .46-.373.833-.834.833H17.5v.9a1 1 0 01-1 1h-13a1 1 0 01-1-1v-.9h-.334A.834.834 0 011.332 8.067V5.733c0-.46.373-.833.834-.833zM4.5 5.9h11v5.2H4.5V5.9z" clip-rule="evenodd"></path></svg>
+                        </span>
+                        <div>
+                            <div class="text-sm font-semibold text-slate-800">經濟部自來水承裝技工</div>
+                            <p class="text-[10px] text-slate-400 mt-0.5">國家經濟部合格登記之自來水管路安全施工人員</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 實體地址與位置資訊 -->
+            <section class="space-y-4">
+                <h2 class="text-base font-bold text-slate-800 flex items-center gap-2">
+                    <span class="w-1.5 h-4 bg-brand-blue rounded-full"></span>
+                    營業與儲料處所
+                </h2>
+                <div class="bg-slate-50 border border-slate-100 rounded-2xl p-4 flex flex-col gap-3">
+                    <div class="flex items-start gap-3">
+                        <span class="text-rose-500 mt-1 bg-white p-1.5 rounded-lg shadow-sm border border-slate-100">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
+                        </span>
+                        <div>
+                            <div class="text-sm font-semibold text-slate-800">台中市清水區中山路560之15號</div>
+                            <p class="text-[10px] text-slate-400 mt-0.5">出工車輛及材料集散處，到府維修服務請提前電話預約</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-center pl-10">
+                        <a href="https://www.google.com/maps/search/?api=1&query=台中市清水區中山路560之15號" target="_blank" class="text-xs text-blue-600 hover:underline font-bold">
+                            點擊開啟 Google 地圖 📍
+                        </a>
+                        <button onclick="toggleCardModal(true)" class="text-xs text-slate-500 hover:underline font-semibold">
+                            檢視對照原始紙本名片 📄
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- 底部聯絡/分享按鈕 -->
+        <footer class="sticky bottom-0 bg-white border-t border-slate-100/80 p-4 grid grid-cols-2 gap-3 shadow-[0_-5px_20px_rgba(15,43,92,0.04)]">
+            <button onclick="shareApp()" class="flex items-center justify-center gap-2 border border-slate-200 hover:bg-slate-50 text-slate-600 py-3.5 rounded-xl font-bold text-sm active:scale-95 transition-all duration-200">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8.684 10.742l4.57 2.286M14.286 9.43L9.716 7.143M17 11a3 3 0 11-6 0 3 3 0 016 0zm-6-6a3 3 0 11-6 0 3 3 0 016 0zm6 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                傳送分享名片
+            </button>
+            <a href="tel:0966869611" class="flex items-center justify-center gap-2 bg-brand-blue hover:bg-blue-900 text-white py-3.5 rounded-xl font-bold text-sm active:scale-95 transition-all duration-200 shadow-lg shadow-blue-900/10">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                播打王建智技師
+            </a>
+        </footer>
+
+        <!-- 燈箱模組 1：LINE QR Code 燈箱彈窗 -->
+        <div id="lineModal" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[100] flex items-center justify-center p-6 transition-all duration-300">
+            <div class="bg-white rounded-3xl p-6 w-full max-w-xs text-center relative shadow-2xl border border-slate-100">
+                <button onclick="toggleLineModal(false)" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+                <div class="text-emerald-600 font-bold text-lg mb-2 flex items-center justify-center gap-1.5">
+                    <span>💬</span> 加 LINE 為好友
+                </div>
+                <p class="text-xs text-slate-400 mb-5 leading-normal">請儲存下方條碼、或直接使用 LINE 內建掃描加好友</p>
+                
+                <div class="bg-slate-50 p-4 rounded-2xl inline-block mb-4 border border-slate-100">
+                    <a href="https://line.me/ti/p/tj71THzdlI" target="_blank" class="block w-40 h-40">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://line.me/ti/p/tj71THzdlI" alt="LINE QR Code" class="w-full h-full rounded-xl">
+                    </a>
+                </div>
+
+                <div class="text-xs text-slate-400">台中清水區 專業水電工務服務</div>
+            </div>
+        </div>
+
+        <!-- 燈箱模組 2：原始名片圖檔燈箱 -->
+        <div id="cardModal" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[110] flex items-center justify-center p-6">
+            <div class="bg-white rounded-3xl p-4 w-full max-w-md relative shadow-2xl border border-slate-100">
+                <button onclick="toggleCardModal(false)" class="absolute top-4 right-4 bg-slate-800/80 text-white p-1 rounded-full hover:bg-slate-900 transition">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+                <div class="text-slate-800 font-bold text-sm mb-3 flex items-center gap-2">
+                    <span>📄</span> 原始紙本名片對照 (722A7D29-CADE-4576-A32B-7C62CF3DEB0A.jpg)
+                </div>
+                <div class="rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 flex items-center justify-center">
+                    <!-- 置入原始檔案 -->
+                    <img src="722A7D29-CADE-4576-A32B-7C62CF3DEB0A.jpg" onerror="this.src='https://placehold.co/600x330/0F2B5C/FFFFFF?text=%E5%BB%BA%E8%AA%A0%E6%B0%B4%E9%9B%BB%E5%B7%A5%E7%A8%8B%E8%A1%8C'" alt="建誠水電工程行 原始名片" class="w-full h-auto object-contain">
+                </div>
+                <p class="text-center text-[11px] text-slate-400 mt-3">王建智技師專業服務 ｜ 0966-869-611</p>
+            </div>
+        </div>
+
+        <!-- 燈箱模組 3：服務照片實績動態相簿/上傳燈箱 -->
+        <div id="galleryModal" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[120] flex items-end sm:items-center justify-center p-0 sm:p-6 transition-all duration-300">
+            <div class="bg-white rounded-t-[2rem] sm:rounded-3xl w-full max-w-md max-h-[85vh] sm:max-h-[75vh] flex flex-col shadow-2xl overflow-hidden border border-slate-50">
+                <!-- 燈箱標題與說明 -->
+                <div class="px-6 py-5 border-b border-slate-100 flex items-center justify-between bg-brand-blue text-white">
+                    <div class="flex items-center gap-2.5">
+                        <span id="galleryEmoji" class="text-2xl">🔧</span>
+                        <div>
+                            <h3 id="galleryTitle" class="font-bold text-base leading-tight">服務項目</h3>
+                            <p class="text-[10px] text-blue-200 mt-0.5">您可使用下方按鈕追加您自建的新實績相片</p>
+                        </div>
+                    </div>
+                    <button onclick="closeServiceGallery()" class="text-white/80 hover:text-white p-1 rounded-full hover:bg-white/10 transition">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </button>
+                </div>
+
+                <!-- 貼心指南 -->
+                <div class="bg-amber-50 border-b border-amber-100/50 px-6 py-2.5 flex items-start gap-2">
+                    <span class="text-amber-500 text-xs mt-0.5">💡</span>
+                    <p class="text-[10px] text-amber-800 leading-relaxed">
+                        系統已為您直接<strong>在程式碼中寫入寫死永久照片</strong>。若要加入或更換為新照片，您可以在本機上傳，滿意後點擊頂端的<strong>「齒輪 ⚙️」</strong>一鍵打包下載新網頁，照片即可終身保存。
                     </p>
                 </div>
 
-                <!-- 頂部快速標籤 -->
-                <div class="flex flex-wrap justify-center md:justify-start gap-3 pt-1">
-                    <span class="text-xs px-3 py-1.5 bg-stone-100 text-stone-600 rounded-lg"><i class="fa-solid fa-calculator mr-1"></i>20+ 年財會經驗</span>
-                    <span class="text-xs px-3 py-1.5 bg-stone-100 text-stone-600 rounded-lg"><i class="fa-solid fa-microchip mr-1"></i>AI 辦公大師</span>
-                    <span class="text-xs px-3 py-1.5 bg-stone-100 text-stone-600 rounded-lg"><i class="fa-solid fa-map-pin mr-1"></i>桃園八德</span>
-                </div>
-
-                <!-- 完美對齊 image_f67df5.png 的詳細個人資料與教育程度 (已移除年齡橫列) -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-5 border-t border-beige-200 text-left">
-                    <!-- 基本聯絡資料 -->
-                    <div class="space-y-3 text-sm text-stone-600">
-                        <h3 class="text-xs font-bold text-stone-400 uppercase tracking-widest flex items-center gap-2 mb-1">
-                            <i class="fa-solid fa-address-card text-accent"></i>
-                            <span>個人聯絡資料 / Personal Info</span>
-                        </h3>
-                        <div class="flex items-center gap-2">
-                            <span class="w-20 text-stone-400 text-xs flex-shrink-0">應徵職務</span>
-                            <span class="font-semibold text-beige-900 bg-beige-100/50 px-2.5 py-0.5 rounded-md text-xs">主辦會計</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <span class="w-20 text-stone-400 text-xs flex-shrink-0">聯絡手機</span>
-                            <a href="tel:0926330450" class="font-medium text-accent hover:underline flex items-center gap-1">
-                                0926-330-450 <i class="fa-solid fa-phone text-[10px]"></i>
-                            </a>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <span class="w-20 text-stone-400 text-xs flex-shrink-0">電子郵件</span>
-                            <a href="mailto:wu2136tr@gmail.com" class="font-medium text-accent hover:underline flex items-center gap-1">
-                                wu2136tr@gmail.com <i class="fa-solid fa-envelope text-[10px]"></i>
-                            </a>
-                        </div>
-                        <div class="flex items-start gap-2">
-                            <span class="w-20 text-stone-400 text-xs flex-shrink-0">通訊地址</span>
-                            <span class="font-medium text-stone-800 leading-snug">桃園市八德區</span>
-                        </div>
+                <!-- 燈箱相簿內容展示區 -->
+                <div id="galleryContainer" class="flex-1 p-6 overflow-y-auto space-y-4 min-h-[250px] bg-slate-50/50">
+                    <!-- 照片展示 Grid -->
+                    <div id="photoGrid" class="grid grid-cols-2 gap-3">
+                        <!-- 動態生成實績照片 -->
                     </div>
-
-                    <!-- 教育程度 -->
-                    <div class="space-y-3 text-sm text-stone-600">
-                        <h3 class="text-xs font-bold text-stone-400 uppercase tracking-widest flex items-center gap-2 mb-1">
-                            <i class="fa-solid fa-graduation-cap text-accent"></i>
-                            <span>教育背景 / Education</span>
-                        </h3>
-                        <div class="bg-white p-4 rounded-xl border border-beige-200 beige-glow space-y-2">
-                            <div class="flex justify-between items-start gap-2">
-                                <div>
-                                    <h4 class="font-bold text-stone-800 text-base">健行科技大學</h4>
-                                    <p class="text-xs text-stone-400 mt-0.5">科系/學院/學校名稱</p>
-                                </div>
-                                <span class="px-2.5 py-0.5 bg-beige-100 text-accent font-semibold text-xs rounded-full">學士學位</span>
-                            </div>
-                            <div class="pt-2 border-t border-stone-100 flex items-center justify-between text-xs text-stone-500">
-                                <span>時期 (From ~ To)</span>
-                                <span class="font-mono font-medium text-stone-700">民國 83/07 ~ 86/06</span>
-                            </div>
-                        </div>
+                    <!-- 空相簿狀態提示 -->
+                    <div id="emptyGalleryState" class="flex flex-col items-center justify-center py-12 text-center space-y-2">
+                        <span class="text-4xl">📸</span>
+                        <h4 class="font-bold text-xs text-slate-700">尚未上傳工程實績照片</h4>
+                        <p class="text-[10px] text-slate-400">歡迎點選下方按鈕，加入實際施工成果照片</p>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <section id="about" class="space-y-6">
-            <div class="border-l-4 border-accent pl-4">
-                <h2 class="text-2xl font-bold text-beige-900 tracking-wide">關於我</h2>
-                <p class="text-xs text-stone-400 uppercase tracking-widest mt-0.5">My Philosophy & Background</p>
+                <!-- 燈箱底座：控制與上傳按鈕 -->
+                <div class="p-4 bg-white border-t border-slate-100 flex flex-col gap-2">
+                    <input type="file" id="photoInput" accept="image/*" multiple class="hidden" onchange="handleFileSelect(event)">
+                    <button onclick="triggerFileInput()" class="w-full py-3 bg-brand-blue hover:bg-blue-900 text-white font-bold text-xs rounded-xl shadow-md transition duration-200 active:scale-95 flex items-center justify-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        新增您的專屬現場施工照
+                    </button>
+                </div>
             </div>
-            <div class="bg-white p-6 md:p-8 rounded-2xl border border-beige-200 beige-glow space-y-6">
-                <p class="text-stone-700 leading-relaxed text-justify">
-                    您好，我是<strong>吳慧華</strong>。出社會以來我一直深耕於會計與財務領域。我深信，豐富的資歷不代表裹足不前。在資訊與新科技不斷爆發的時代，我們更應該主動吸收新知、擁抱變化，才不會被時代的洪流所淘汰。
+        </div>
+
+        <!-- 燈箱模組 4：⚙️ 網頁管理者與一鍵打包後台 -->
+        <div id="adminModal" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[130] flex items-center justify-center p-6">
+            <div class="bg-white rounded-3xl p-6 w-full max-w-sm relative shadow-2xl max-h-[85vh] flex flex-col border border-slate-50">
+                <button onclick="toggleAdminModal(false)" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+                <div class="text-brand-blue font-bold text-base mb-2 flex items-center gap-1.5">
+                    <span>⚙️</span> 建誠網頁管理後台
+                </div>
+                <p class="text-[11px] text-slate-400 mb-4 leading-relaxed">
+                    在這裡您可以將剛才上傳的暫時實績照片「永久注入」網頁中。打包下載為全新的網頁檔後，不論在哪台手機、LINE 或社群上打開，實績照片都永遠存在！
                 </p>
-                <p class="text-stone-700 leading-relaxed text-justify">
-                    為此，我於近期主動增加技能，參加職訓局舉辦的職前訓練：<strong>「數位辦公與AI應用培訓班」（400小時）</strong>，深度掌握如何透過 AI 工具解決工作難題、簡化繁瑣的財務與文書流程。我的個性溫和、好相處與極強的學習適應力，讓我能以最短時間熟悉工作，為企業帶來兼具「穩定精準」與「高效數位化」的雙重價值。
-                </p>
-            </div>
-        </section>
 
-        <section id="skills" class="space-y-6">
-            <div class="border-l-4 border-accent pl-4">
-                <h2 class="text-2xl font-bold text-beige-900 tracking-wide">專業技能</h2>
-                <p class="text-xs text-stone-400 uppercase tracking-widest mt-0.5">Core Competencies</p>
-            </div>
-            
-            <!-- 三欄等高核心技能網格 -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
-                <!-- 技能一：專業財務會計與稅務 -->
-                <div class="bg-white p-6 rounded-2xl border border-beige-200 beige-glow hover:border-accent/40 transition-all duration-300 flex flex-col justify-between min-h-[340px]">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-beige-100 flex items-center justify-center text-accent mb-4 text-xl">
-                            <i class="fa-solid fa-wallet"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-beige-900 mb-2">專業財務會計與稅務</h3>
-                        <p class="text-sm text-stone-500 leading-relaxed">
-                            精通各項費用審核、憑證與傳票製作。專精於應付帳款流程、各類財務報表編製與分析、營業稅等各項稅務申報與外帳查核。
-                        </p>
+                <!-- 上傳狀態與統計 (自動偵測暫存數量) -->
+                <div class="bg-slate-50 border border-slate-100 rounded-2xl p-4 flex-1 overflow-y-auto space-y-2.5 mb-4 text-xs text-slate-600 font-medium">
+                    <div class="font-bold text-slate-700 border-b border-slate-200/60 pb-1.5 mb-2 flex items-center justify-between">
+                        <span>📸 各類別照片統計：</span>
+                        <span class="text-[10px] text-slate-400">目前本機</span>
                     </div>
-                    <div class="mt-4 pt-4 border-t border-stone-50 text-xs text-accent font-semibold">
-                        <button onclick="openFinanceModal(event)" class="w-full py-2.5 bg-accent hover:bg-beige-900 text-white font-medium text-xs rounded-xl flex items-center justify-center gap-1.5 transition-colors shadow-sm text-center cursor-pointer">
-                            <span>開啟財務與稅務證照</span>
-                            <i class="fa-solid fa-magnifying-glass text-[10px]"></i>
-                        </button>
-                    </div>
+                    <div class="flex justify-between"><span>🔧 水電維修：</span><span id="cnt-water_elec" class="font-bold">0 張</span></div>
+                    <div class="flex justify-between"><span>🔌 室內配線：</span><span id="cnt-wiring" class="font-bold">0 張</span></div>
+                    <div class="flex justify-between"><span>🚿 衛浴設備：</span><span id="cnt-bathroom" class="font-bold">0 張</span></div>
+                    <div class="flex justify-between"><span>💡 燈具安裝：</span><span id="cnt-lighting" class="font-bold">0 張</span></div>
+                    <div class="flex justify-between"><span>🏠 房屋修繕：</span><span id="cnt-house_repair" class="font-bold">0 張</span></div>
+                    <div class="flex justify-between"><span>⚙️ 馬達安裝：</span><span id="cnt-motor" class="font-bold">0 張</span></div>
+                    <div class="flex justify-between"><span>📋 工程承包：</span><span id="cnt-project" class="font-bold">0 張</span></div>
+                    <div class="flex justify-between"><span>🌀 水管疏通：</span><span id="cnt-plumbing" class="font-bold">0 張</span></div>
                 </div>
 
-                <!-- 技能二：主流 ERP 系統操作 -->
-                <div class="bg-white p-6 rounded-2xl border border-beige-200 beige-glow hover:border-accent/40 transition-all duration-300 flex flex-col justify-between min-h-[340px]">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-beige-100 flex items-center justify-center text-accent mb-4 text-xl">
-                            <i class="fa-solid fa-network-wired"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-beige-900 mb-2">主流 ERP 系統操作</h3>
-                        <p class="text-sm text-stone-500 leading-relaxed">
-                            熟練掌握「正航 ERP」、「凌越 ERP」與「鼎新 Workflow ERP」等跨系統帳務處理，能高效對接不同企業的 ERP 系統進行無縫帳務建置。
-                        </p>
-                    </div>
-                    <div class="mt-4 pt-4 border-t border-stone-50 text-xs text-accent font-semibold">
-                        <button onclick="openERPModal(event)" class="w-full py-2.5 bg-accent hover:bg-beige-900 text-white font-medium text-xs rounded-xl flex items-center justify-center gap-1.5 transition-colors shadow-sm text-center cursor-pointer">
-                            <span>開啟鼎新 Workflow 認證</span>
-                            <i class="fa-solid fa-magnifying-glass text-[10px]"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- 技能三：AI 數位辦公自動化 -->
-                <div class="bg-white p-6 rounded-2xl border border-beige-200 beige-glow hover:border-accent/40 transition-all duration-300 flex flex-col justify-between min-h-[340px]">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-beige-100 flex items-center justify-center text-accent mb-4 text-xl">
-                            <i class="fa-solid fa-bolt"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-beige-900 mb-2">AI 數位辦公自動化</h3>
-                        <p class="text-sm text-stone-500 leading-relaxed">
-                            運用 Excel/Word/PPT、Gemini AI 與自動化工具，縮短手工登帳與報表產製時間。將 AI 技術應用於日常數據排版與對帳，成效卓著。
-                        </p>
-                    </div>
-                    <div class="mt-4 pt-4 border-t border-stone-50 text-xs text-accent font-semibold">
-                        <button onclick="openGeminiModal(event)" class="w-full py-2.5 bg-accent hover:bg-beige-900 text-white font-medium text-xs rounded-xl flex items-center justify-center gap-1.5 transition-colors shadow-sm text-center cursor-pointer">
-                            <span>開啟Gemini 多項教育與應用認證</span>
-                            <i class="fa-solid fa-magnifying-glass text-[10px]"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 專業認證與外部檢視 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
-                <!-- MOS 365 官方認證檢視 -->
-                <div class="bg-white rounded-2xl overflow-hidden border border-beige-200 hover:border-accent beige-glow group flex flex-col transition-all duration-300 hover:-translate-y-1">
-                    <div class="h-40 bg-gradient-to-br from-beige-100 to-amber-50 flex items-center justify-center p-6 border-b border-beige-200 relative">
-                        <i class="fa-solid fa-file-contract text-5xl text-accent/50 group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="absolute top-3 left-3 bg-white/80 backdrop-blur-sm text-[10px] px-2 py-0.5 rounded-md text-stone-500">外部連結</span>
-                    </div>
-                    <div class="p-5 flex-grow flex flex-col justify-between">
-                        <div class="space-y-2">
-                            <h3 class="text-base font-bold text-beige-900">MOS 365 官方認證檢視</h3>
-                            <p class="text-xs text-stone-500 leading-relaxed">
-                                連結至官方認證平台，查閱完整 Microsoft Office Specialist 365 認證資訊與證書明細。
-                            </p>
-                        </div>
-                        <div class="mt-5 space-y-3">
-                            <div class="flex flex-wrap gap-1.5">
-                                <span class="text-[10px] px-2 py-0.5 bg-stone-100 text-stone-600 rounded">Microsoft</span>
-                                <span class="text-[10px] px-2 py-0.5 bg-stone-100 text-stone-600 rounded">Official</span>
-                            </div>
-                            <button onclick="openCertModal()" class="w-full py-2.5 bg-accent hover:bg-beige-900 text-white font-medium text-xs rounded-xl flex items-center justify-center gap-1.5 transition-colors shadow-sm text-center cursor-pointer">
-                                <span>開啟MOS 365 認證</span>
-                                <i class="fa-solid fa-magnifying-glass text-[10px]"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 其他多元專業證照 (食品安全 & AutoCAD) -->
-                <div class="bg-white rounded-2xl overflow-hidden border border-beige-200 hover:border-accent beige-glow group flex flex-col transition-all duration-300 hover:-translate-y-1">
-                    <div class="h-40 bg-gradient-to-br from-beige-100 to-amber-50 flex items-center justify-center p-6 border-b border-beige-200 relative">
-                        <i class="fa-solid fa-compass-drafting text-5xl text-accent/50 group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="absolute top-3 left-3 bg-white/80 backdrop-blur-sm text-[10px] px-2 py-0.5 rounded-md text-stone-500">跨域認證</span>
-                    </div>
-                    <div class="p-5 flex-grow flex flex-col justify-between">
-                        <div class="space-y-2">
-                            <h3 class="text-base font-bold text-beige-900">其他多元專業證照</h3>
-                            <p class="text-xs text-stone-500 leading-relaxed">
-                                整合「食品安全管制系統(HACCP)」與「AutoCAD專業電腦繪圖」檢定，展示跨領域與多元工程技術的優秀適應力。
-                            </p>
-                        </div>
-                        <div class="mt-5 space-y-3">
-                            <div class="flex flex-wrap gap-1.5">
-                                <span class="text-[10px] px-2 py-0.5 bg-stone-100 text-stone-600 rounded">HACCP</span>
-                                <span class="text-[10px] px-2 py-0.5 bg-stone-100 text-stone-600 rounded">AutoCAD</span>
-                            </div>
-                            <button onclick="openOtherModal()" class="w-full py-2.5 bg-accent hover:bg-beige-900 text-white font-medium text-xs rounded-xl flex items-center justify-center gap-1.5 transition-colors shadow-sm text-center cursor-pointer">
-                                <span>開啟其他證照</span>
-                                <i class="fa-solid fa-magnifying-glass text-[10px]"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="portfolio" class="space-y-6">
-            <div class="border-l-4 border-accent pl-4">
-                <h2 class="text-2xl font-bold text-beige-900 tracking-wide">實績與專案作品</h2>
-                <p class="text-xs text-stone-400 uppercase tracking-widest mt-0.5">Project Showcases</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- 作品一 -->
-                <div class="bg-white rounded-2xl overflow-hidden border border-beige-200 beige-glow group flex flex-col h-full">
-                    <div class="h-40 bg-gradient-to-br from-beige-100 to-amber-50 flex items-center justify-center p-6 border-b border-beige-200 relative">
-                        <i class="fa-solid fa-chart-line text-5xl text-accent/50 group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="absolute top-3 left-3 bg-white/80 backdrop-blur-sm text-[10px] px-2 py-0.5 rounded-md text-stone-500">財務分析</span>
-                    </div>
-                    <div class="p-5 flex-grow flex flex-col justify-between">
-                        <div>
-                            <h3 class="text-base font-bold text-beige-900 mb-2">企業財務報告與成本 analysis 模組</h3>
-                            <p class="text-xs text-stone-500 leading-relaxed">
-                                針對中大型製造商 or 跨國企業，建構完整的損益表、資產負債表及多維度成本 analysis 模型，助主管進行精準決策。
-                            </p>
-                        </div>
-                        <div class="mt-5 space-y-3">
-                            <div class="flex flex-wrap gap-1.5">
-                                <span class="text-[10px] px-2 py-0.5 bg-stone-100 text-stone-600 rounded">Excel</span>
-                                <span class="text-[10px] px-2 py-0.5 bg-stone-100 text-stone-600 rounded">外帳結算</span>
-                            </div>
-                            <!-- 修正這裡的 href：移除帳號名稱，改用乾淨的相對路徑 -->
-                            <a href="Data-Analysis.html" class="w-full py-2.5 bg-accent hover:bg-beige-900 text-white font-medium text-xs rounded-xl flex items-center justify-center gap-1.5 transition-colors shadow-sm cursor-pointer text-center">
-                                <span>開啟財務分析與報表</span>
-                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 作品二 -->
-                <div class="bg-white rounded-2xl overflow-hidden border border-beige-200 beige-glow group flex flex-col h-full">
-                    <div class="h-40 bg-gradient-to-br from-beige-100 to-amber-50 flex items-center justify-center p-6 border-b border-beige-200 relative">
-                        <i class="fa-solid fa-rotate text-5xl text-accent/50 group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="absolute top-3 left-3 bg-white/80 backdrop-blur-sm text-[10px] px-2 py-0.5 rounded-md text-stone-500">系統整合</span>
-                    </div>
-                    <div class="p-5 flex-grow flex flex-col justify-between">
-                        <div>
-                            <h3 class="text-base font-bold text-beige-900 mb-2">ERP 系統帳務流暢化專案</h3>
-                            <p class="text-xs text-stone-500 leading-relaxed">
-                                簡化手動收發、紀錄交易等傳統原始憑證流程，將其與鼎新/正航 ERP 完美介接，大幅減低傳票入帳錯誤率。
-                            </p>
-                        </div>
-                        <div class="mt-4 flex flex-wrap gap-1.5">
-                            <span class="text-[10px] px-2 py-0.5 bg-stone-100 text-stone-600 rounded">ERP 流程優化</span>
-                            <span class="text-[10px] px-2 py-0.5 bg-stone-100 text-stone-600 rounded">內部控制</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 作品三 (AI 智能工具箱入口卡片) -->
-                <div class="bg-white rounded-2xl overflow-hidden border-2 border-accent/40 hover:border-accent beige-glow group flex flex-col h-full transition-all duration-300 hover:-translate-y-1">
-                    <div class="h-40 bg-gradient-to-br from-amber-50 to-beige-100 flex items-center justify-center p-6 border-b border-beige-200 relative">
-                        <i class="fa-solid fa-toolbox text-5xl text-accent group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="absolute top-3 left-3 bg-accent text-white text-[10px] px-2 py-0.5 rounded-md font-bold">互動工具</span>
-                    </div>
-                    <div class="p-5 flex-grow flex flex-col justify-between">
-                        <div class="space-y-2">
-                            <h3 class="text-base font-bold text-beige-900">AI 智能工具箱</h3>
-                            <p class="text-xs text-stone-500 leading-relaxed">
-                                整合「行政文書生成器」與「商業視覺設計提示詞產生器」，將 AI 與日常辦公流程深度融合，實現智慧化營運。
-                            </p>
-                        </div>
-                        <div class="mt-5 space-y-3">
-                            <div class="flex flex-wrap gap-1.5">
-                                <span class="text-[10px] px-2 py-0.5 bg-stone-100 text-stone-600 rounded">Gemini API</span>
-                                <span class="text-[10px] px-2 py-0.5 bg-stone-100 text-stone-600 rounded">行政自動化</span>
-                                <span class="text-[10px] px-2 py-0.5 bg-stone-100 text-stone-600 rounded">提示詞美學</span>
-                            </div>
-                            <!-- 外部跳轉按鈕 -->
-                            <a href="tools.html" class="w-full py-2.5 bg-accent hover:bg-beige-900 text-white font-medium text-xs rounded-xl flex items-center justify-center gap-1.5 transition-colors shadow-sm text-center">
-                                <span>立即開啟工具箱</span>
-                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="experience" class="space-y-6">
-            <div class="border-l-4 border-accent pl-4">
-                <h2 class="text-2xl font-bold text-beige-900 tracking-wide">工作經歷</h2>
-                <p class="text-xs text-stone-400 uppercase tracking-widest mt-0.5">Working Experience</p>
-            </div>
-
-            <!-- 時間軸容器 -->
-            <div class="relative border-l-2 border-beige-200 ml-4 pl-6 md:pl-8 space-y-12 py-2">
-                
-                <!-- 經歷 1: 大地興機器廠 -->
-                <div class="relative group">
-                    <!-- 時間軸節點小圓點 -->
-                    <span class="absolute -left-[31px] md:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-accent border-4 border-beige-50 group-hover:scale-125 transition-transform duration-300"></span>
-                    
-                    <!-- 經歷卡片 -->
-                    <div class="bg-white p-6 rounded-2xl border border-beige-200 beige-glow hover:border-accent/40 transition-all duration-300 space-y-4">
-                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
-                            <div>
-                                <h3 class="text-lg font-bold text-beige-900 flex items-center gap-2">
-                                    <i class="fa-solid fa-building text-stone-400 text-sm"></i>
-                                    <span>大地興機器廠(股)公司</span>
-                                </h3>
-                                <p class="text-sm font-semibold text-accent mt-0.5">主辦會計</p>
-                            </div>
-                            <div class="flex flex-wrap items-center gap-2 text-xs">
-                                <span class="px-2.5 py-1 bg-beige-100 text-stone-700 font-medium rounded-lg">
-                                    <i class="fa-solid fa-calendar-days mr-1 text-accent"></i>民國 114/04/01 ~ 114/11/30
-                                </span>
-                                <span class="px-2.5 py-1 bg-red-50 text-red-700 font-semibold rounded-lg border border-red-100 flex items-center gap-1">
-                                    <i class="fa-solid fa-right-from-bracket text-[10px]"></i>離職原因：想嘗試不同產業發展
-                                </span>
-                            </div>
-                        </div>
-                        
-                        <div class="pt-3 border-t border-stone-100 space-y-2.5">
-                            <h4 class="text-xs font-bold text-stone-400 uppercase tracking-wider flex items-center gap-1">
-                                <i class="fa-solid fa-list-check"></i>
-                                <span>工作職責 (Job Duty)</span>
-                            </h4>
-                            <ul class="space-y-2 text-stone-600 text-sm">
-                                <li class="flex items-start gap-2.5">
-                                    <span class="text-accent mt-0.5"><i class="fa-solid fa-circle-check text-xs"></i></span>
-                                    <span class="leading-relaxed">審核有關各項費用支付之發票、單據及帳務處理。</span>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <span class="text-accent mt-0.5"><i class="fa-solid fa-circle-check text-xs"></i></span>
-                                    <span class="leading-relaxed">處理廠商貨款或費用等應付款項帳務。</span>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <span class="text-accent mt-0.5"><i class="fa-solid fa-circle-check text-xs"></i></span>
-                                    <span class="leading-relaxed">處理其他一般會計帳務。</span>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <span class="text-accent mt-0.5"><i class="fa-solid fa-circle-check text-xs"></i></span>
-                                    <span class="leading-relaxed">定期編製帳務報表。</span>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <span class="text-accent mt-0.5"><i class="fa-solid fa-circle-check text-xs"></i></span>
-                                    <span class="leading-relaxed">製作財務報告及分析。</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 經歷 2: 英商優而備智亞太有線 -->
-                <div class="relative group">
-                    <!-- 時間軸節點小圓點 -->
-                    <span class="absolute -left-[31px] md:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-accent border-4 border-beige-50 group-hover:scale-125 transition-transform duration-300"></span>
-                    
-                    <!-- 經歷卡片 -->
-                    <div class="bg-white p-6 rounded-2xl border border-beige-200 beige-glow hover:border-accent/40 transition-all duration-300 space-y-4">
-                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
-                            <div>
-                                <h3 class="text-lg font-bold text-beige-900 flex items-center gap-2">
-                                    <i class="fa-solid fa-building text-stone-400 text-sm"></i>
-                                    <span>英商優而備智亞太有線公司台灣分公司</span>
-                                </h3>
-                                <p class="text-sm font-semibold text-accent mt-0.5">主辦會計</p>
-                            </div>
-                            <div class="flex flex-wrap items-center gap-2 text-xs">
-                                <span class="px-2.5 py-1 bg-beige-100 text-stone-700 font-medium rounded-lg">
-                                    <i class="fa-solid fa-calendar-days mr-1 text-accent"></i>民國 109/03/15 ~ 113/12/31
-                                </span>
-                                <span class="px-2.5 py-1 bg-orange-50 text-orange-800 font-semibold rounded-lg border border-orange-100 flex items-center gap-1">
-                                    <i class="fa-solid fa-right-from-bracket text-[10px]"></i>離職原因：公司遷移
-                                </span>
-                            </div>
-                        </div>
-                        
-                        <div class="pt-3 border-t border-stone-100 space-y-2.5">
-                            <h4 class="text-xs font-bold text-stone-400 uppercase tracking-wider flex items-center gap-1">
-                                <i class="fa-solid fa-list-check"></i>
-                                <span>工作職責 (Job Duty)</span>
-                            </h4>
-                            <ul class="space-y-2 text-stone-600 text-sm">
-                                <li class="flex items-start gap-2.5">
-                                    <span class="text-accent mt-0.5"><i class="fa-solid fa-circle-check text-xs"></i></span>
-                                    <span class="leading-relaxed">收發、記錄及彙整交易產生之原始憑證，並登錄至會計系統製作傳票。</span>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <span class="text-accent mt-0.5"><i class="fa-solid fa-circle-check text-xs"></i></span>
-                                    <span class="leading-relaxed">審核有關各項費用支付之發票、單據及帳務處理。</span>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <span class="text-accent mt-0.5"><i class="fa-solid fa-circle-check text-xs"></i></span>
-                                    <span class="leading-relaxed">申報營業稅等各項稅務。</span>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <span class="text-accent mt-0.5"><i class="fa-solid fa-circle-check text-xs"></i></span>
-                                    <span class="leading-relaxed">負責公司外帳之查核及登帳、結帳整理及稅務申報。</span>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <span class="text-accent mt-0.5"><i class="fa-solid fa-circle-check text-xs"></i></span>
-                                    <span class="leading-relaxed">定期編製帳務報表。</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-    </main>
-
-    <!-- 1. 財務與稅務證照互動彈出視窗 (Finance Modal) -->
-    <div id="finance-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm hidden transition-all duration-300">
-        <div class="bg-white border border-beige-200 w-full max-w-4xl rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
-            <div class="px-6 py-4 border-b border-beige-100 flex justify-between items-center bg-beige-50">
-                <h3 class="text-base md:text-lg font-bold text-beige-900 flex items-center gap-2">
-                    <i class="fa-solid fa-wallet text-accent"></i>
-                    <span>專業財務與稅務證照</span>
-                </h3>
-                <button onclick="closeFinanceModal()" class="text-stone-400 hover:text-stone-600 text-2xl font-light leading-none">&times;</button>
-            </div>
-            
-            <div class="p-6 overflow-y-auto flex-grow space-y-6">
-                <p class="text-xs text-stone-500 text-center">點擊證書圖片，可在新分頁開啟高解析度原圖檢視。</p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="space-y-3 text-center">
-                        <span class="inline-block px-2.5 py-1 bg-amber-50 text-amber-800 text-xs font-semibold rounded-md">會計準則 (EAS)</span>
-                        <a href="https://raw.githubusercontent.com/wu2136tr-coder/portfolio/main/pics/eas.png" target="_blank" class="block border border-beige-200 rounded-xl overflow-hidden hover:border-accent hover:shadow-md transition-all p-1 bg-white">
-                            <img src="https://raw.githubusercontent.com/wu2136tr-coder/portfolio/main/pics/eas.png" alt="會計準則 EAS 證照" class="w-full h-auto object-cover mx-auto" onerror="this.onerror=null; this.src='https://placehold.co/600x420/f5f0e6/b88e56?text=EAS+Certificate';">
-                        </a>
-                    </div>
-                    <div class="space-y-3 text-center">
-                        <span class="inline-block px-2.5 py-1 bg-emerald-50 text-emerald-800 text-xs font-semibold rounded-md">稅務申報實務</span>
-                        <a href="https://raw.githubusercontent.com/wu2136tr-coder/portfolio/main/pics/tax.png" target="_blank" class="block border border-beige-200 rounded-xl overflow-hidden hover:border-accent hover:shadow-md transition-all p-1 bg-white">
-                            <img src="https://raw.githubusercontent.com/wu2136tr-coder/portfolio/main/pics/tax.png" alt="稅務申報證照" class="w-full h-auto object-cover mx-auto" onerror="this.onerror=null; this.src='https://placehold.co/600x420/f5f0e6/b88e56?text=Tax+Certificate';">
-                        </a>
-                    </div>
-                    <div class="space-y-3 text-center">
-                        <span class="inline-block px-2.5 py-1 bg-blue-50 text-blue-800 text-xs font-semibold rounded-md">Power BI 財務分析</span>
-                        <a href="https://raw.githubusercontent.com/wu2136tr-coder/portfolio/main/pics/power-bi.png" target="_blank" class="block border border-beige-200 rounded-xl overflow-hidden hover:border-accent hover:shadow-md transition-all p-1 bg-white">
-                            <img src="https://raw.githubusercontent.com/wu2136tr-coder/portfolio/main/pics/power-bi.png" alt="Power BI 數據視覺化證照" class="w-full h-auto object-cover mx-auto" onerror="this.onerror=null; this.src='https://placehold.co/600x420/f5f0e6/b88e56?text=Power+BI+Certificate';">
-                        </a>
-                    </div>
-                </div>
-                <div class="flex justify-center pt-6">
-                    <button onclick="scrollToHomeFromModal('finance-modal')" class="px-8 py-3 bg-accent hover:bg-beige-900 text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all flex items-center gap-2 text-xs md:text-sm cursor-pointer">
-                        <i class="fa-solid fa-house"></i>
-                        <span>點此關閉並返回首頁</span>
+                <div class="space-y-2">
+                    <button onclick="exportFinalHtml()" class="w-full py-3 bg-gradient-to-r from-blue-700 to-brand-blue hover:from-blue-800 hover:to-blue-950 text-white font-bold text-xs rounded-xl shadow-md transition duration-200 active:scale-95 flex items-center justify-center gap-2">
+                        <span>💾</span> 一鍵打包下載永久網頁 (index.html)
+                    </button>
+                    <button onclick="clearAllTempPhotos()" class="w-full py-2 bg-slate-50 hover:bg-rose-50 text-slate-400 hover:text-rose-600 font-semibold text-[10px] rounded-lg transition">
+                        🧹 清空目前暫存測試照片
                     </button>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- 2. MOS 365 證照互動彈出視窗 (MOS Modal Overlay) -->
-    <div id="cert-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm hidden transition-all duration-300">
-        <div class="bg-white border border-beige-200 w-full max-w-4xl rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
-            <div class="px-6 py-4 border-b border-beige-100 flex justify-between items-center bg-beige-50">
-                <h3 class="text-base md:text-lg font-bold text-beige-900 flex items-center gap-2">
-                    <i class="fa-solid fa-award text-accent"></i>
-                    <span>MOS 365 (Microsoft 365 Apps) 國際認證證書</span>
-                </h3>
-                <button onclick="closeCertModal()" class="text-stone-400 hover:text-stone-600 text-2xl font-light leading-none">&times;</button>
-            </div>
-            
-            <div class="p-6 overflow-y-auto flex-grow space-y-6">
-                <p class="text-xs text-stone-500 text-center">點擊證書圖片，可在新分頁開啟高清大圖檢視驗證。</p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="space-y-3 text-center">
-                        <span class="inline-block px-2.5 py-1 bg-blue-50 text-blue-700 text-xs font-semibold rounded-md">Word Expert</span>
-                        <a href="https://raw.githubusercontent.com/wu2136tr-coder/portfolio/main/word.png" target="_blank" class="block border border-beige-200 rounded-xl overflow-hidden hover:border-accent hover:shadow-md transition-all p-1 bg-white">
-                            <img src="https://raw.githubusercontent.com/wu2136tr-coder/portfolio/main/word.png" alt="Word Expert Certificate" class="w-full h-auto object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x420/f5f0e6/b88e56?text=Word+Expert+Certificate';">
-                        </a>
-                    </div>
-                    <div class="space-y-3 text-center">
-                        <span class="inline-block px-2.5 py-1 bg-green-50 text-green-700 text-xs font-semibold rounded-md">Excel Expert</span>
-                        <a href="https://raw.githubusercontent.com/wu2136tr-coder/portfolio/main/excel.png" target="_blank" class="block border border-beige-200 rounded-xl overflow-hidden hover:border-accent hover:shadow-md transition-all p-1 bg-white">
-                            <img src="https://raw.githubusercontent.com/wu2136tr-coder/portfolio/main/excel.png" alt="Excel Expert Certificate" class="w-full h-auto object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x420/f5f0e6/b88e56?text=Excel+Expert+Certificate';">
-                        </a>
-                    </div>
-                    <div class="space-y-3 text-center">
-                        <span class="inline-block px-2.5 py-1 bg-orange-50 text-orange-700 text-xs font-semibold rounded-md">PowerPoint Associate</span>
-                        <a href="https://raw.githubusercontent.com/wu2136tr-coder/portfolio/main/ppt.png" target="_blank" class="block border border-beige-200 rounded-xl overflow-hidden hover:border-accent hover:shadow-md transition-all p-1 bg-white">
-                            <img src="https://raw.githubusercontent.com/wu2136tr-coder/portfolio/main/ppt.png" alt="PowerPoint Certificate" class="w-full h-auto object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x420/f5f0e6/b88e56?text=PowerPoint+Certificate';">
-                        </a>
-                    </div>
-                </div>
-                <div class="flex justify-center pt-6">
-                    <button onclick="scrollToHomeFromModal('cert-modal')" class="px-8 py-3 bg-accent hover:bg-beige-900 text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all flex items-center gap-2 text-xs md:text-sm cursor-pointer">
-                        <i class="fa-solid fa-house"></i>
-                        <span>點此關閉並返回首頁</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 3. Gemini 證照互動彈出視窗 (Gemini Modal Overlay) -->
-    <div id="gemini-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm hidden transition-all duration-300">
-        <div class="bg-white border border-beige-200 w-full max-w-4xl rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
-            <div class="px-6 py-4 border-b border-beige-100 flex justify-between items-center bg-beige-50">
-                <h3 class="text-base md:text-lg font-bold text-beige-900 flex items-center gap-2">
-                    <i class="fa-solid fa-graduation-cap text-accent"></i>
-                    <span>Gemini AI 多項教育與應用官方專業認證</span>
-                </h3>
-                <button onclick="closeGeminiModal()" class="text-stone-400 hover:text-stone-600 text-2xl font-light leading-none">&times;</button>
-            </div>
-            
-            <div class="p-6 overflow-y-auto flex-grow space-y-6">
-                <p class="text-xs text-stone-500 text-center">點擊證書圖片，可在新分頁開啟高解析度原圖檢視。</p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="space-y-3 text-center">
-                        <span class="inline-block px-2.5 py-1 bg-blue-50 text-blue-700 text-xs font-semibold rounded-md">Gemini 教育家</span>
-                        <a href="https://raw.githubusercontent.com/wu2136tr-coder/portfolio/main/pics/gemini%20educator.png" target="_blank" class="block border border-beige-200 rounded-xl overflow-hidden hover:border-accent hover:shadow-md transition-all p-1 bg-white">
-                            <img src="https://raw.githubusercontent.com/wu2136tr-coder/portfolio/main/pics/gemini%20educator.png" alt="Gemini Educator Certificate" class="w-full h-auto object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x420/f5f0e6/b88e56?text=Gemini+Educator+Certificate';">
-                        </a>
-                    </div>
-                    <div class="space-y-3 text-center">
-                        <span class="inline-block px-2.5 py-1 bg-purple-50 text-purple-700 text-xs font-semibold rounded-md">Gemini 大學生認證</span>
-                        <a href="https://raw.githubusercontent.com/wu2136tr-coder/portfolio/main/pics/gemini%20student.png" target="_blank" class="block border border-beige-200 rounded-xl overflow-hidden hover:border-accent hover:shadow-md transition-all p-1 bg-white">
-                            <img src="https://raw.githubusercontent.com/wu2136tr-coder/portfolio/main/pics/gemini%20student.png" alt="Gemini College Student Certificate" class="w-full h-auto object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x420/f5f0e6/b88e56?text=Gemini+Student+Certificate';">
-                        </a>
-                    </div>
-                    <div class="space-y-3 text-center">
-                        <span class="inline-block px-2.5 py-1 bg-indigo-50 text-indigo-700 text-xs font-semibold rounded-md">Gemini 教職員認證</span>
-                        <a href="https://raw.githubusercontent.com/wu2136tr-coder/portfolio/main/pics/gemini%20faculty.png" target="_blank" class="block border border-beige-200 rounded-xl overflow-hidden hover:border-accent hover:shadow-md transition-all p-1 bg-white">
-                            <img src="https://raw.githubusercontent.com/wu2136tr-coder/portfolio/main/pics/gemini%20faculty.png" alt="Gemini Faculty and Staff Certificate" class="w-full h-auto object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x420/f5f0e6/b88e56?text=Gemini+Faculty+Certificate';">
-                        </a>
-                    </div>
-                </div>
-                <div class="flex justify-center pt-6">
-                    <button onclick="scrollToHomeFromModal('gemini-modal')" class="px-8 py-3 bg-accent hover:bg-beige-900 text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all flex items-center gap-2 text-xs md:text-sm cursor-pointer">
-                        <i class="fa-solid fa-house"></i>
-                        <span>點此關閉並返回首頁</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 4. 鼎新 Workflow 認證互動彈出視窗 (ERP Modal) -->
-    <div id="erp-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm hidden transition-all duration-300">
-        <div class="bg-white border border-beige-200 w-full max-w-4xl rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
-            <div class="px-6 py-4 border-b border-beige-100 flex justify-between items-center bg-beige-50">
-                <h3 class="text-base md:text-lg font-bold text-beige-900 flex items-center gap-2">
-                    <i class="fa-solid fa-certificate text-accent"></i>
-                    <span>鼎新 Workflow ERP 官方專業職能認證證書</span>
-                </h3>
-                <button onclick="closeERPModal()" class="text-stone-400 hover:text-stone-600 text-2xl font-light leading-none">&times;</button>
-            </div>
-            
-            <div class="p-6 overflow-y-auto flex-grow space-y-6">
-                <p class="text-xs text-stone-500 text-center">點擊證書圖片，可在新分頁開啟高解析度原圖檢視。</p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="space-y-3 text-center">
-                        <span class="inline-block px-2.5 py-1 bg-amber-50 text-amber-800 text-xs font-semibold rounded-md">基本操作與系統應用</span>
-                        <a href="https://raw.githubusercontent.com/wu2136tr-coder/portfolio/main/pics/erp-chinese.png" target="_blank" class="block border border-beige-200 rounded-xl overflow-hidden hover:border-accent hover:shadow-md transition-all p-1 bg-white">
-                            <img src="https://raw.githubusercontent.com/wu2136tr-coder/portfolio/main/pics/erp-chinese.png" alt="ERP 中文系統與基本操作證照" class="w-full h-auto object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x420/f5f0e6/b88e56?text=ERP+Chinese+Certificate';">
-                        </a>
-                    </div>
-                    <div class="space-y-3 text-center">
-                        <span class="inline-block px-2.5 py-1 bg-emerald-50 text-emerald-800 text-xs font-semibold rounded-md">財務模組應用</span>
-                        <a href="https://raw.githubusercontent.com/wu2136tr-coder/portfolio/main/pics/erp-financial.png" target="_blank" class="block border border-beige-200 rounded-xl overflow-hidden hover:border-accent hover:shadow-md transition-all p-1 bg-white">
-                            <img src="https://raw.githubusercontent.com/wu2136tr-coder/portfolio/main/pics/erp-financial.png" alt="ERP 財務模組應用證照" class="w-full h-auto object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x420/f5f0e6/b88e56?text=ERP+Financial+Certificate';">
-                        </a>
-                    </div>
-                    <div class="space-y-3 text-center">
-                        <span class="inline-block px-2.5 py-1 bg-sky-50 text-sky-800 text-xs font-semibold rounded-md">配銷模組應用</span>
-                        <a href="https://raw.githubusercontent.com/wu2136tr-coder/portfolio/main/pics/erp-distribution.png" target="_blank" class="block border border-beige-200 rounded-xl overflow-hidden hover:border-accent hover:shadow-md transition-all p-1 bg-white">
-                            <img src="https://raw.githubusercontent.com/wu2136tr-coder/portfolio/main/pics/erp-distribution.png" alt="ERP 配銷模組應用證照" class="w-full h-auto object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x420/f5f0e6/b88e56?text=ERP+Distribution+Certificate';">
-                        </a>
-                    </div>
-                </div>
-                <div class="flex justify-center pt-6">
-                    <button onclick="scrollToHomeFromModal('erp-modal')" class="px-8 py-3 bg-accent hover:bg-beige-900 text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all flex items-center gap-2 text-xs md:text-sm cursor-pointer">
-                        <i class="fa-solid fa-house"></i>
-                        <span>點此關閉並返回首頁</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 5. 其他多元證照互動彈出視窗 (Other Modal - HACCP & AutoCAD) -->
-    <div id="other-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm hidden transition-all duration-300">
-        <div class="bg-white border border-beige-200 w-full max-w-4xl rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
-            <div class="px-6 py-4 border-b border-beige-100 flex justify-between items-center bg-beige-50">
-                <h3 class="text-base md:text-lg font-bold text-beige-900 flex items-center gap-2">
-                    <i class="fa-solid fa-compass-drafting text-accent"></i>
-                    <span>跨領域專業證照 (食品安全管制系統 & AutoCAD)</span>
-                </h3>
-                <button onclick="closeOtherModal()" class="text-stone-400 hover:text-stone-600 text-2xl font-light leading-none">&times;</button>
-            </div>
-            
-            <div class="p-6 overflow-y-auto flex-grow space-y-6">
-                <p class="text-xs text-stone-500 text-center">點擊證書圖片，可在新分頁開啟高解析度原圖檢視。</p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="space-y-3 text-center">
-                        <span class="inline-block px-2.5 py-1 bg-green-50 text-green-800 text-xs font-semibold rounded-md">食品安全管制系統 A</span>
-                        <a href="https://raw.githubusercontent.com/wu2136tr-coder/portfolio/main/pics/food-safe-1.png" target="_blank" class="block border border-beige-200 rounded-xl overflow-hidden hover:border-accent hover:shadow-md transition-all p-1 bg-white">
-                            <img src="https://raw.githubusercontent.com/wu2136tr-coder/portfolio/main/pics/food-safe-1.png" alt="食品安全管制系統訓練合格證書 A" class="w-full h-auto object-cover mx-auto" onerror="this.onerror=null; this.src='https://placehold.co/600x420/f5f0e6/b88e56?text=Food+Safe+A+Certificate';">
-                        </a>
-                    </div>
-                    <div class="space-y-3 text-center">
-                        <span class="inline-block px-2.5 py-1 bg-green-50 text-green-800 text-xs font-semibold rounded-md">食品安全管制系統 B</span>
-                        <a href="https://raw.githubusercontent.com/wu2136tr-coder/portfolio/main/pics/food-safe-2.png" target="_blank" class="block border border-beige-200 rounded-xl overflow-hidden hover:border-accent hover:shadow-md transition-all p-1 bg-white">
-                            <img src="https://raw.githubusercontent.com/wu2136tr-coder/portfolio/main/pics/food-safe-2.png" alt="食品安全管制系統訓練合格證書 B" class="w-full h-auto object-cover mx-auto" onerror="this.onerror=null; this.src='https://placehold.co/600x420/f5f0e6/b88e56?text=Food+Safe+B+Certificate';">
-                        </a>
-                    </div>
-                    <div class="space-y-3 text-center">
-                        <span class="inline-block px-2.5 py-1 bg-blue-50 text-blue-800 text-xs font-semibold rounded-md">AutoCAD 專業工程繪圖</span>
-                        <a href="https://raw.githubusercontent.com/wu2136tr-coder/portfolio/main/autocad.png" target="_blank" class="block border border-beige-200 rounded-xl overflow-hidden hover:border-accent hover:shadow-md transition-all p-1 bg-white">
-                            <img src="https://raw.githubusercontent.com/wu2136tr-coder/portfolio/main/autocad.png" alt="AutoCAD 專業認證證書" class="w-full h-auto object-cover mx-auto" onerror="this.onerror=null; this.src='https://placehold.co/600x420/f5f0e6/b88e56?text=AutoCAD+Certificate';">
-                        </a>
-                    </div>
-                </div>
-                <div class="flex justify-center pt-6">
-                    <button onclick="scrollToHomeFromModal('other-modal')" class="px-8 py-3 bg-accent hover:bg-beige-900 text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all flex items-center gap-2 text-xs md:text-sm cursor-pointer">
-                        <i class="fa-solid fa-house"></i>
-                        <span>點此關閉並返回首頁</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 底部頁尾 -->
-    <footer class="bg-beige-100/50 border-t border-beige-200 text-stone-500 text-xs py-8">
-        <div class="max-w-4xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-            <p>© 2026 吳慧華 Wu Hui Hua. All rights reserved.</p>
-            <p>融合財務智慧與數位創新的新一代主辦會計</p>
-        </div>
-    </footer>
-
-    <!-- 提示框元件 (取代 alert) -->
-    <div id="toast" class="fixed bottom-6 right-6 bg-stone-900 text-stone-100 text-sm px-4 py-3 rounded-xl shadow-lg transform translate-y-20 opacity-0 transition-all duration-300 flex items-center gap-2">
-        <i class="fa-solid fa-circle-check text-accent"></i>
-        <span id="toast-msg">複製成功！</span>
     </div>
 
     <script>
-        // 1. 財務與稅務證照視窗控制
-        function openFinanceModal(event) {
-            if (event) event.preventDefault();
-            const modal = document.getElementById('finance-modal');
-            modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden'; 
-        }
+        // ==========================================
+        // 🌟 雲端永久相冊資料庫 (在這裡，我為您寫入了精心挑選的高畫質、高關聯性專業水電與衛浴實績照片)
+        // ==========================================
+        /* START_CLOUD_PHOTOS */
+        const CLOUD_PERMANENT_PHOTOS = {
+            "water_elec": [
+                "https://images.unsplash.com/photo-1581094288338-2314dddb7eed?auto=format&fit=crop&w=600&q=80"
+            ],
+            "wiring": [
+                "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80"
+            ],
+            "bathroom": [
+                "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80"
+            ],
+            "lighting": [
+                "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?auto=format&fit=crop&w=600&q=80"
+            ],
+            "house_repair": [
+                "https://images.unsplash.com/photo-1505798577917-a65157d3320a?auto=format&fit=crop&w=600&q=80"
+            ],
+            "motor": [
+                "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80"
+            ],
+            "project": [
+                "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80"
+            ],
+            "plumbing": [
+                "https://images.unsplash.com/photo-1607472586893-edb5ca094e7d?auto=format&fit=crop&w=600&q=80"
+            ]
+        };
+        /* END_CLOUD_PHOTOS */
 
-        function closeFinanceModal() {
-            const modal = document.getElementById('finance-modal');
-            modal.classList.add('hidden');
-            document.body.style.overflow = ''; 
-        }
+        // 當前互動之服務 ID
+        let currentServiceId = '';
 
-        // 2. MOS 365 證照視窗控制
-        function openCertModal() {
-            const modal = document.getElementById('cert-modal');
-            modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden'; 
-        }
-
-        function closeCertModal() {
-            const modal = document.getElementById('cert-modal');
-            modal.classList.add('hidden');
-            document.body.style.overflow = ''; 
-        }
-
-        // 3. Gemini 證照視窗控制
-        function openGeminiModal(event) {
-            if (event) event.preventDefault();
-            const modal = document.getElementById('gemini-modal');
-            modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden'; 
-        }
-
-        function closeGeminiModal() {
-            const modal = document.getElementById('gemini-modal');
-            modal.classList.add('hidden');
-            document.body.style.overflow = ''; 
-        }
-
-        // 4. 鼎新 ERP 視窗控制
-        function openERPModal(event) {
-            if (event) event.preventDefault();
-            const modal = document.getElementById('erp-modal');
-            modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeERPModal() {
-            const modal = document.getElementById('erp-modal');
-            modal.classList.add('hidden');
-            document.body.style.overflow = '';
-        }
-
-        // 5. 其他多元證照視窗控制
-        function openOtherModal() {
-            const modal = document.getElementById('other-modal');
-            modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeOtherModal() {
-            const modal = document.getElementById('other-modal');
-            modal.classList.add('hidden');
-            document.body.style.overflow = '';
-        }
-
-        // 點擊 CTA 鈕回首頁功能
-        function scrollToHomeFromModal(modalId) {
-            const modal = document.getElementById(modalId);
-            if (modal) {
+        // 控制 LINE 燈箱顯示
+        function toggleLineModal(show) {
+            const modal = document.getElementById('lineModal');
+            if (show) {
+                modal.classList.remove('hidden');
+            } else {
                 modal.classList.add('hidden');
             }
-            document.body.style.overflow = ''; 
+        }
 
-            const heroSection = document.getElementById('hero');
-            if (heroSection) {
-                heroSection.scrollIntoView({ behavior: 'smooth' });
-                showToast("已為您回到首頁！");
+        // 控制原始名片圖檔顯示
+        function toggleCardModal(show) {
+            const modal = document.getElementById('cardModal');
+            if (show) {
+                modal.classList.remove('hidden');
+            } else {
+                modal.classList.add('hidden');
             }
         }
 
-        // 點擊 Modal 外部空白處自動關閉
-        window.addEventListener('click', function(e) {
-            const financeModal = document.getElementById('finance-modal');
-            const certModal = document.getElementById('cert-modal');
-            const geminiModal = document.getElementById('gemini-modal');
-            const erpModal = document.getElementById('erp-modal');
-            const otherModal = document.getElementById('other-modal');
-            if (e.target === financeModal) {
-                closeFinanceModal();
+        // 控制管理後台顯示
+        function toggleAdminModal(show) {
+            const modal = document.getElementById('adminModal');
+            if (show) {
+                updateAdminStats();
+                modal.classList.remove('hidden');
+            } else {
+                modal.classList.add('hidden');
             }
-            if (e.target === certModal) {
-                closeCertModal();
+        }
+
+        // 統計目前各類別之照片量並反映於後台
+        function updateAdminStats() {
+            const categories = ['water_elec', 'wiring', 'bathroom', 'lighting', 'house_repair', 'motor', 'project', 'plumbing'];
+            categories.forEach(cat => {
+                const storageKey = `jiancheng_gallery_${cat}`;
+                const localPhotos = JSON.parse(localStorage.getItem(storageKey)) || [];
+                const element = document.getElementById(`cnt-${cat}`);
+                if (element) {
+                    element.innerText = `${localPhotos.length} 張`;
+                    if (localPhotos.length > 0) {
+                        element.className = "font-bold text-blue-600";
+                    } else {
+                        element.className = "font-bold text-slate-400";
+                    }
+                }
+            });
+        }
+
+        // 行動裝置專屬 Web Share API
+        async function shareApp() {
+            if (navigator.share) {
+                try {
+                    await navigator.share({
+                        title: '建誠水電工程行 - 行動名片',
+                        text: '王建智技術士：水電維修、室內配線、衛浴設備、房屋修繕，專業品質保證！',
+                        url: window.location.href
+                    });
+                } catch (err) {
+                    console.log('使用者取消分享');
+                }
+            } else {
+                copyToClipboard(window.location.href);
             }
-            if (e.target === geminiModal) {
-                closeGeminiModal();
+        }
+
+        // 複製網址備援方案
+        function copyToClipboard(text) {
+            const tempInput = document.createElement("input");
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+            
+            showToast("已複製網頁連結，可直接傳送分享至 LINE / FB / IG");
+        }
+
+        // 高質感自訂 Toast 提示
+        function showToast(message) {
+            const toast = document.createElement("div");
+            toast.className = "fixed bottom-24 left-1/2 -translate-x-1/2 bg-slate-800/90 text-white text-xs px-4 py-2.5 rounded-full shadow-lg z-[200] transition-opacity duration-300 backdrop-blur-sm w-[90%] max-w-xs text-center";
+            toast.innerText = message;
+            document.body.appendChild(toast);
+            setTimeout(() => {
+                toast.classList.add('opacity-0');
+                setTimeout(() => toast.remove(), 300);
+            }, 2500);
+        }
+
+        // 開啟特定服務實績相簿
+        function openServiceGallery(serviceId, serviceName, emoji) {
+            currentServiceId = serviceId;
+            document.getElementById('galleryTitle').innerText = `${serviceName} 實績`;
+            document.getElementById('galleryEmoji').innerText = emoji;
+            
+            renderServicePhotos();
+            
+            const modal = document.getElementById('galleryModal');
+            modal.classList.remove('hidden');
+            document.body.classList.add('overflow-hidden'); // 背景鎖定
+        }
+
+        // 關閉服務相簿
+        function closeServiceGallery() {
+            const modal = document.getElementById('galleryModal');
+            modal.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+            currentServiceId = '';
+        }
+
+        function triggerFileInput() {
+            document.getElementById('photoInput').click();
+        }
+
+        function handleFileSelect(event) {
+            const files = event.target.files;
+            if (files && files.length > 0) {
+                processFiles(files);
             }
-            if (e.target === erpModal) {
-                closeERPModal();
+            event.target.value = '';
+        }
+
+        // 自動圖片高画質壓縮演算法 (確保大量圖片儲存於 index.html 後，網頁體積依然精簡流暢)
+        function processFiles(files) {
+            Array.from(files).forEach(file => {
+                if (!file.type.startsWith('image/')) {
+                    showToast('請選擇合適的圖片圖檔！');
+                    return;
+                }
+
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = new Image();
+                    img.onload = function() {
+                        const canvas = document.createElement('canvas');
+                        let width = img.width;
+                        let height = img.height;
+                        const maxSize = 800; // 等比縮放至最大 800px 兼顧清晰與網頁載入速度
+
+                        if (width > height) {
+                            if (width > maxSize) {
+                                height *= maxSize / width;
+                                width = maxSize;
+                            }
+                        } else {
+                            if (height > maxSize) {
+                                width *= maxSize / height;
+                                height = maxSize;
+                            }
+                        }
+
+                        canvas.width = width;
+                        canvas.height = height;
+                        const ctx = canvas.getContext('2d');
+                        ctx.drawImage(img, 0, 0, width, height);
+
+                        // 轉為小體積、高品質的 JPEG 格式
+                        const compressedBase64 = canvas.toDataURL('image/jpeg', 0.72);
+                        savePhotoToStorage(compressedBase64);
+                    };
+                    img.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+
+        // 將照片存入瀏覽器本機暫存空間
+        function savePhotoToStorage(base64Image) {
+            try {
+                const storageKey = `jiancheng_gallery_${currentServiceId}`;
+                let existingPhotos = JSON.parse(localStorage.getItem(storageKey)) || [];
+                existingPhotos.push(base64Image);
+                
+                localStorage.setItem(storageKey, JSON.stringify(existingPhotos));
+                renderServicePhotos();
+                showToast('已加入本機暫存，請用齒輪打包下載永久保存！');
+            } catch (error) {
+                console.error(error);
+                showToast('儲存失敗：本機暫存已滿，請點擊頂部「齒輪」一鍵打包網頁！');
             }
-            if (e.target === otherModal) {
-                closeOtherModal();
+        }
+
+        // 渲染指定類別的所有照片 (雲端寫死照片 + 本機上傳暫存照片)
+        function renderServicePhotos() {
+            const storageKey = `jiancheng_gallery_${currentServiceId}`;
+            const localPhotos = JSON.parse(localStorage.getItem(storageKey)) || [];
+            const permanentPhotos = CLOUD_PERMANENT_PHOTOS[currentServiceId] || [];
+            
+            const allPhotos = [...permanentPhotos, ...localPhotos];
+            const grid = document.getElementById('photoGrid');
+            const emptyState = document.getElementById('emptyGalleryState');
+            
+            grid.innerHTML = '';
+            
+            if (allPhotos.length === 0) {
+                grid.classList.add('hidden');
+                emptyState.classList.remove('hidden');
+            } else {
+                grid.classList.remove('hidden');
+                emptyState.classList.add('hidden');
+                
+                allPhotos.forEach((photoUrl, index) => {
+                    const isPermanent = index < permanentPhotos.length;
+                    const photoWrapper = document.createElement('div');
+                    photoWrapper.className = "relative aspect-square rounded-2xl overflow-hidden bg-slate-100 border border-slate-100 group shadow-sm";
+                    
+                    photoWrapper.innerHTML = `
+                        <img src="${photoUrl}" class="w-full h-full object-cover" alt="實績照片">
+                        ${isPermanent ? `
+                            <span class="absolute bottom-1.5 right-1.5 bg-blue-600/90 text-white text-[9px] font-bold px-2 py-0.5 rounded-lg shadow-sm backdrop-blur-sm">
+                                永久實績
+                            </span>
+                        ` : `
+                            <button onclick="deletePhoto(${index - permanentPhotos.length})" class="absolute top-2 right-2 bg-rose-600 hover:bg-rose-700 text-white p-1.5 rounded-full shadow-md active:scale-90 transition duration-200">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-16v1a3 3 0 003 3h10M9 3h6m-6 4h6"></path>
+                                </svg>
+                            </button>
+                            <span class="absolute bottom-1.5 right-1.5 bg-amber-500/95 text-white text-[9px] font-bold px-2 py-0.5 rounded-lg shadow-sm backdrop-blur-sm">
+                                本機暫存
+                            </span>
+                        `}
+                    `;
+                    grid.appendChild(photoWrapper);
+                });
+            }
+        }
+
+        // 移除指定本機暫存相片
+        function deletePhoto(index) {
+            const storageKey = `jiancheng_gallery_${currentServiceId}`;
+            let photos = JSON.parse(localStorage.getItem(storageKey)) || [];
+            photos.splice(index, 1);
+            
+            if (photos.length === 0) {
+                localStorage.removeItem(storageKey);
+            } else {
+                localStorage.setItem(storageKey, JSON.stringify(photos));
+            }
+            renderServicePhotos();
+            showToast('已移除該張暫時測試照片。');
+        }
+
+        // 支援快速電腦端 Ctrl+V 貼上工程照片
+        document.addEventListener('paste', function(event) {
+            const modal = document.getElementById('galleryModal');
+            if (modal.classList.contains('hidden') || !currentServiceId) return;
+
+            const items = (event.clipboardData || event.originalEvent.clipboardData).items;
+            let imageFiles = [];
+            
+            for (let i = 0; i < items.length; i++) {
+                if (items[i].type.indexOf('image') !== -1) {
+                    const file = items[i].getAsFile();
+                    imageFiles.push(file);
+                }
+            }
+            
+            if (imageFiles.length > 0) {
+                event.preventDefault();
+                processFiles(imageFiles);
+                showToast('正在優化壓縮剪貼簿相片...');
             }
         });
 
-        // 顯示自訂提示訊息
-        function showToast(message) {
-            const toast = document.getElementById('toast');
-            const msgSpan = document.getElementById('toast-msg');
-            msgSpan.textContent = message;
-            
-            toast.classList.remove('translate-y-20', 'opacity-0');
-            toast.classList.add('translate-y-0', 'opacity-100');
+        // 清空所有本機暫存照片
+        function clearAllTempPhotos() {
+            const categories = ['water_elec', 'wiring', 'bathroom', 'lighting', 'house_repair', 'motor', 'project', 'plumbing'];
+            categories.forEach(cat => {
+                localStorage.removeItem(`jiancheng_gallery_${cat}`);
+            });
+            updateAdminStats();
+            showToast('已成功清空所有本機暫置照片！');
+        }
 
-            setTimeout(() => {
-                toast.classList.remove('translate-y-0', 'opacity-100');
-                toast.classList.add('translate-y-20', 'opacity-0');
-            }, 2500);
+        // 一鍵自編譯永久下載封裝系統
+        async function exportFinalHtml() {
+            showToast('正在進行網頁編譯與照片封裝...');
+            
+            const categories = ['water_elec', 'wiring', 'bathroom', 'lighting', 'house_repair', 'motor', 'project', 'plumbing'];
+            const exportedPhotos = {};
+            
+            categories.forEach(cat => {
+                const storageKey = `jiancheng_gallery_${cat}`;
+                const currentPermanent = CLOUD_PERMANENT_PHOTOS[cat] || [];
+                const currentLocal = JSON.parse(localStorage.getItem(storageKey)) || [];
+                exportedPhotos[cat] = [...currentPermanent, ...currentLocal];
+            });
+
+            try {
+                let rawHtml = '';
+                try {
+                    const response = await fetch(window.location.href);
+                    if (response.ok) {
+                        rawHtml = await response.text();
+                    }
+                } catch(e) {}
+
+                if (!rawHtml) {
+                    rawHtml = '<!DOCTYPE html>\n<html lang="zh-Hant-TW">\n' + document.documentElement.outerHTML + '\n</html>';
+                }
+
+                const startMarker = '/* START_CLOUD_PHOTOS */';
+                const endMarker = '/* END_CLOUD_PHOTOS */';
+                const startIndex = rawHtml.indexOf(startMarker);
+                const endIndex = rawHtml.indexOf(endMarker);
+
+                if (startIndex !== -1 && endIndex !== -1) {
+                    const beforePart = rawHtml.substring(0, startIndex + startMarker.length);
+                    const afterPart = rawHtml.substring(endIndex);
+                    
+                    const newDeclaration = `\n        const CLOUD_PERMANENT_PHOTOS = ${JSON.stringify(exportedPhotos, null, 12)};\n        `;
+                    const finalHtml = beforePart + newDeclaration + afterPart;
+
+                    // 下載整合後具備實績相片之新 index.html
+                    const blob = new Blob([finalHtml], { type: 'text/html;charset=utf-8' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'index.html'; 
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                    
+                    toggleAdminModal(false);
+                    showToast('💾 永久版網頁打包成功！已自動下載 index.html');
+                } else {
+                    showToast('打包封裝失敗：找不到內部定位標記。');
+                }
+            } catch (error) {
+                console.error(error);
+                showToast('封裝過程發生異常。');
+            }
         }
     </script>
 </body>
