@@ -89,7 +89,7 @@
                     <div class="p-2.5 bg-white rounded-xl shadow-sm mb-1.5 text-emerald-500"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M21.9 10.4c-.1-4-3.3-7.3-7.4-7.4-4.3-.1-7.8 3.1-7.8 7.4 0 1.9.7 3.6 1.9 5 .2.2.3.5.2.7l-.5 2.1c-.1.5.4.9.9.7l2.1-.8c.2-.1.5 0 .7.1 1 .5 2.1.8 3.3.8 4.3 0 7.7-3.4 7.7-7.7-1.1-.3-1-.9-1.1-.9z"/></svg></div>
                     <span class="text-[11px] font-bold">加 LINE</span>
                 </button>
-                <a href="https://www.google.com/maps/search/?api=1&query=台中市清水區中山路560之15號" target="_blank" class="flex flex-col items-center justify-center p-3.5 bg-rose-50/50 border border-rose-100 rounded-2xl text-rose-800 active:scale-95 transition">
+                <a href="https://www.google.com/maps/search/?api=1&query=台中市清水區中山路560之6號" target="_blank" class="flex flex-col items-center justify-center p-3.5 bg-rose-50/50 border border-rose-100 rounded-2xl text-rose-800 active:scale-95 transition">
                     <div class="p-2.5 bg-white rounded-xl shadow-sm mb-1.5 text-rose-500"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg></div>
                     <span class="text-[11px] font-bold">工廠導航</span>
                 </a>
@@ -247,6 +247,27 @@
             </div>
         </div>
 
+        <!-- 🌟 服務項目實績照片燈箱 -->
+        <div id="serviceGalleryModal" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[140] flex items-end sm:items-center justify-center p-0 sm:p-6 transition-all duration-300">
+            <div class="bg-white rounded-t-[2rem] sm:rounded-3xl w-full max-w-md max-h-[85vh] flex flex-col shadow-2xl overflow-hidden border border-slate-50">
+                <div class="px-6 py-5 border-b border-slate-100 flex items-center justify-between bg-brand-blue text-white">
+                    <div class="flex items-center gap-2.5">
+                        <span id="serviceGalleryEmo" class="text-2xl">🔧</span>
+                        <div>
+                            <h3 id="serviceGalleryTitle" class="font-bold text-base leading-tight">服務實績</h3>
+                        </div>
+                    </div>
+                    <button onclick="closeServiceGallery()" class="text-white/80 hover:text-white p-1 rounded-full hover:bg-white/10 transition"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+                </div>
+                <div class="flex-1 p-6 overflow-y-auto space-y-6 bg-slate-50/50">
+                    <div id="serviceGalleryContent" class="space-y-6">
+                        <!-- 動態生成實績照片 -->
+                    </div>
+                </div>
+                <div class="p-4 bg-white border-t border-slate-100"><button onclick="closeServiceGallery()" class="w-full py-3 bg-brand-blue text-white font-bold text-xs rounded-xl transition">關閉預覽</button></div>
+            </div>
+        </div>
+
         <!-- 🌟 行動名片圖檔燈箱 -->
         <div id="cardShareModal" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[150] flex items-center justify-center p-6 transition-all duration-300">
             <div class="bg-white rounded-3xl p-6 w-full max-w-xs text-center relative shadow-2xl border border-slate-100">
@@ -278,7 +299,16 @@
     <script>
         /* START_CLOUD_PHOTOS */
         const CLOUD_PERMANENT_PHOTOS = {
-            "water_elec": [],
+            "water_elec": [
+                {
+                    "url": "https://wu2136tr-coder.github.io/JianCheng/pics/fix-b1.jpg",
+                    "caption": "廚房排水管漏施工前"
+                },
+                {
+                    "url": "https://wu2136tr-coder.github.io/JianCheng/pics/fix-a1.jpg",
+                    "caption": "廚房排水管漏施工後"
+                }
+            ],
             "wiring": [],
             "bathroom": [],
             "lighting": [],
@@ -319,6 +349,42 @@
             }
         }
 
+        // 開啟專業服務實績照片燈箱
+        function openServiceGallery(id, name, emo) {
+            document.getElementById('serviceGalleryTitle').innerText = `${name} 實績照片`;
+            document.getElementById('serviceGalleryEmo').innerText = emo;
+            
+            const container = document.getElementById('serviceGalleryContent');
+            container.innerHTML = '';
+            
+            const photos = CLOUD_PERMANENT_PHOTOS[id] || [];
+            if (photos.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-12 text-slate-400">
+                        <span class="text-4xl block mb-2">📸</span>
+                        <p class="text-xs">尚無該項目的實績照片</p>
+                    </div>
+                `;
+            } else {
+                photos.forEach(item => {
+                    const itemEl = document.createElement('div');
+                    itemEl.className = "space-y-2";
+                    itemEl.innerHTML = `
+                        <span class="text-[10px] font-bold text-slate-400 block">${item.caption}</span>
+                        <div class="rounded-2xl border border-slate-100 overflow-hidden bg-white shadow-sm">
+                            <img src="${item.url}" class="w-full h-auto block" alt="${item.caption}">
+                        </div>
+                    `;
+                    container.appendChild(itemEl);
+                });
+            }
+            document.getElementById('serviceGalleryModal').classList.remove('hidden');
+        }
+
+        function closeServiceGallery() {
+            document.getElementById('serviceGalleryModal').classList.add('hidden');
+        }
+
         async function exportFinalHtml() {
             const raw = document.documentElement.outerHTML;
             const start = '/* START_CLOUD_PHOTOS */';
@@ -335,7 +401,6 @@
 
         function toggleLineModal(s) { document.getElementById('lineModal').classList.toggle('hidden', !s); }
         function toggleAdminModal(s) { document.getElementById('adminModal').classList.toggle('hidden', !s); }
-        function openServiceGallery(id, name, emo) { /* 保持原實績照片功能 */ }
         
         // 行動名片圖檔燈箱開關
         function toggleCardModal(s) {
