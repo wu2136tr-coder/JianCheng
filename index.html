@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
 <head>
@@ -29,7 +30,10 @@
     
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght=300;400;500;700&display=swap');
-        body { font-family: 'Noto Sans TC', sans-serif; background-color: #F8FAFC; }
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #F8FAFC; 
+        }
         .license-placeholder {
             border: 2px dashed #CBD5E1;
             background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 5V19M5 12H19' stroke='%2394A3B8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
@@ -42,7 +46,7 @@
 
     <div class="w-full max-w-md bg-white shadow-[0_0_50px_rgba(15,43,92,0.08)] flex flex-col justify-between relative min-h-screen">
         
-        <!-- Header -->
+        <!-- 頂部高質感圓弧 Header -->
         <header class="bg-brand-blue text-white px-6 pt-10 pb-12 rounded-b-[2.5rem] relative shadow-lg">
             <div class="flex justify-between items-start mb-4">
                 <div>
@@ -55,33 +59,49 @@
                 </button>
             </div>
             <div class="text-xs text-blue-300 font-mono tracking-wider">統一編號：00852834</div>
+
+            <!-- 負責人與聯絡功能卡片 -->
             <div class="absolute -bottom-8 left-6 right-6 bg-white text-slate-800 rounded-2xl p-4 shadow-[0_10px_25px_rgba(15,43,92,0.1)] flex items-center justify-between border border-slate-50 gap-2">
                 <div>
                     <span class="text-[10px] text-slate-400 font-bold tracking-wider uppercase block">負責人 / 技術士</span>
                     <div class="text-xl font-bold text-slate-800 tracking-widest mt-0.5">王建智</div>
                 </div>
                 <div class="flex items-center gap-2">
-                    <button onclick="shareApp()" class="border border-slate-200 text-slate-600 px-5 py-2.5 rounded-xl font-bold text-[15px] active:scale-95 transition whitespace-nowrap">點擊分享名片</button>
-                    <a href="tel:0966869611" class="bg-emerald-500 text-white px-3 py-2.5 rounded-xl font-bold text-xs tracking-wider active:scale-95 transition flex items-center gap-1.5 whitespace-nowrap">0966-869-611</a>
+                    <button onclick="shareApp()" class="border border-slate-200 text-slate-600 px-5 py-2.5 rounded-xl font-bold text-[15px] active:scale-95 transition whitespace-nowrap">
+                        點擊分享名片
+                    </button>
+                    <a href="tel:0966869611" class="bg-emerald-500 text-white px-3 py-2.5 rounded-xl font-bold text-xs tracking-wider active:scale-95 transition flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
+                        0966-869-611
+                    </a>
                 </div>
             </div>
         </header>
 
         <main class="px-6 pt-14 pb-24 flex-1 space-y-8">
+            
+            <!-- 快捷操作模組 -->
             <section class="grid grid-cols-3 gap-3">
-                <a href="tel:0966869611" class="flex flex-col items-center justify-center p-3.5 bg-slate-50 border border-slate-100 rounded-2xl text-brand-blue">
-                    <div class="p-2.5 bg-white rounded-xl shadow-sm mb-1.5 text-blue-600">📞</div><span class="text-[11px] font-bold">電話諮詢</span>
+                <a href="tel:0966869611" class="flex flex-col items-center justify-center p-3.5 bg-slate-50 border border-slate-100 rounded-2xl text-brand-blue active:scale-95 transition">
+                    <div class="p-2.5 bg-white rounded-xl shadow-sm mb-1.5 text-blue-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg></div>
+                    <span class="text-[11px] font-bold">電話諮詢</span>
                 </a>
-                <button onclick="toggleLineModal(true)" class="flex flex-col items-center justify-center p-3.5 bg-emerald-50/50 border border-emerald-100 rounded-2xl text-emerald-800">
-                    <div class="p-2.5 bg-white rounded-xl shadow-sm mb-1.5 text-emerald-500">💬</div><span class="text-[11px] font-bold">加 LINE</span>
+                <button onclick="toggleLineModal(true)" class="flex flex-col items-center justify-center p-3.5 bg-emerald-50/50 border border-emerald-100 rounded-2xl text-emerald-800 active:scale-95 transition">
+                    <div class="p-2.5 bg-white rounded-xl shadow-sm mb-1.5 text-emerald-500"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M21.9 10.4c-.1-4-3.3-7.3-7.4-7.4-4.3-.1-7.8 3.1-7.8 7.4 0 1.9.7 3.6 1.9 5 .2.2.3.5.2.7l-.5 2.1c-.1.5.4.9.9.7l2.1-.8c.2-.1.5 0 .7.1 1 .5 2.1.8 3.3.8 4.3 0 7.7-3.4 7.7-7.7-1.1-.3-1-.9-1.1-.9z"/></svg></div>
+                    <span class="text-[11px] font-bold">加 LINE</span>
                 </button>
-                <a href="https://www.google.com/maps/search/?api=1&query=台中市清水區中山路560之6號" target="_blank" class="flex flex-col items-center justify-center p-3.5 bg-rose-50/50 border border-rose-100 rounded-2xl text-rose-800">
-                    <div class="p-2.5 bg-white rounded-xl shadow-sm mb-1.5 text-rose-500">📍</div><span class="text-[11px] font-bold">工廠導航</span>
+                <a href="https://www.google.com/maps/search/?api=1&query=台中市清水區中山路560之6號" target="_blank" class="flex flex-col items-center justify-center p-3.5 bg-rose-50/50 border border-rose-100 rounded-2xl text-rose-800 active:scale-95 transition">
+                    <div class="p-2.5 bg-white rounded-xl shadow-sm mb-1.5 text-rose-500"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg></div>
+                    <span class="text-[11px] font-bold">工廠導航</span>
                 </a>
             </section>
 
+            <!-- 專業工程服務項目 (2欄網格) -->
             <section class="space-y-4">
-                <h2 class="text-base font-bold text-slate-800 flex items-center gap-2"><span class="w-1.5 h-4 bg-brand-blue rounded-full"></span>專業工程服務項目</h2>
+                <div class="flex items-center justify-between">
+                    <h2 class="text-base font-bold text-slate-800 flex items-center gap-2"><span class="w-1.5 h-4 bg-brand-blue rounded-full"></span>專業工程服務項目</h2>
+                    <span class="text-[10px] bg-blue-50 text-blue-600 font-bold px-2 py-0.5 rounded-full">點選看實績</span>
+                </div>
                 <div class="grid grid-cols-2 gap-3">
                     <button onclick="openServiceGallery('water_elec', '水電維修', '🔧')" class="bg-slate-50 border border-slate-100 rounded-xl p-3.5 flex items-center gap-3 active:scale-95 transition text-left w-full"><span class="text-xl">🔧</span><span class="text-xs font-semibold text-slate-700">水電維修</span></button>
                     <button onclick="openServiceGallery('wiring', '室內配線', '🔌')" class="bg-slate-50 border border-slate-100 rounded-xl p-3.5 flex items-center gap-3 active:scale-95 transition text-left w-full"><span class="text-xl">🔌</span><span class="text-xs font-semibold text-slate-700">室內配線</span></button>
@@ -93,26 +113,83 @@
                     <button onclick="openServiceGallery('plumbing', '水管疏通', '🌀')" class="bg-slate-50 border border-slate-100 rounded-xl p-3.5 flex items-center gap-3 active:scale-95 transition text-left w-full"><span class="text-xl">🌀</span><span class="text-xs font-semibold text-slate-700">水管疏通</span></button>
                 </div>
             </section>
+
+            <!-- 國家檢定專業資格 -->
+            <section class="space-y-4">
+                <div onclick="openLicenseGallery()" class="flex items-center justify-between cursor-pointer group">
+                    <h2 class="text-base font-bold text-slate-800 flex items-center gap-2"><span class="w-1.5 h-4 bg-brand-blue rounded-full"></span>展示國家檢定專業資格</h2>
+                    <span class="text-[10px] text-blue-600 font-bold group-hover:text-brand-blue transition">點選看證照</span>
+                </div>
+                <div class="bg-slate-50 border border-slate-100 rounded-2xl p-4 space-y-4">
+                    <div class="flex items-start gap-3"><span class="text-blue-600 mt-1"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M6.267 3.455a.75.75 0 00-.708-.522H4.5a.75.75 0 00-.75.75v12.5c0 .414.336.75.75.75h1.059a.75.75 0 00.707-.522L7.61 12H12.39l1.294 4.455a.75.75 0 00.707.522h1.059a.75.75 0 00.75-.75V3.683a.75.75 0 00-.75-.75h-1.059a.75.75 0 00-.707.522L12.39 8H7.61L6.267 3.455zM11.5 10H8.5l.87-3h1.26l.87 3z"></path></svg></span>
+                        <div class="text-sm font-semibold text-slate-800">室內配線乙級、丙級技術士</div></div>
+                    <div class="flex items-start gap-3"><span class="text-blue-600 mt-1"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M13 7H7v6h6V7z"></path><path d="M5 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V5a3 3 0 00-3-3H5zm0 2h10a1 1 0 011 1v10a1 1 0 01-1 1H5a1 1 0 01-1-1V5a1 1 0 011-1z"></path></svg></span>
+                        <div class="text-sm font-semibold text-slate-800">工業電子丙級技術士</div></div>
+                    <div class="flex items-start gap-3"><span class="text-blue-600 mt-1"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path><path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path></svg></span>
+                        <div class="text-sm font-semibold text-slate-800">自來水管配管丙級技術士</div></div>
+                    <div class="flex items-start gap-3"><span class="text-blue-600 mt-1"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M2.166 4.9H2.5v-.9a1 1 0 011-1h13a1 1 0 011 1v.9h.334c.46 0 .834.373.834.833v2.334c0 .46-.373.833-.834.833H17.5v.9a1 1 0 01-1 1h-13a1 1 0 01-1-1v-.9h-.334A.834.834 0 011.332 8.067V5.733c0-.46.373-.833.834-.833zM4.5 5.9h11v5.2H4.5V5.9z"></path></svg></span>
+                        <div class="text-sm font-semibold text-slate-800">經濟部自來水承裝技工</div></div>
+                </div>
+            </section>
+
+            <!-- 位置資訊 -->
+            <section class="space-y-4 pb-10">
+                <h2 class="text-base font-bold text-slate-800 flex items-center gap-2"><span class="w-1.5 h-4 bg-brand-blue rounded-full"></span>營業時間與地址</h2>
+                <div class="bg-slate-50 border border-slate-100 rounded-2xl p-4 flex flex-col gap-3">
+                    <div class="text-xs text-slate-600 space-y-2 border-b border-slate-200/60 pb-3 mb-1">
+                        <div class="grid grid-cols-2 gap-x-4 gap-y-1.5 text-slate-700 font-medium">
+                            <div class="flex items-center"><span class="w-[33%]">星期一</span><span class="font-bold text-slate-800">8:00-18:00</span></div>
+                            <div class="flex items-center"><span class="w-[33%]">星期五</span><span class="font-bold text-slate-800">8:00-18:00</span></div>
+                            <div class="flex items-center"><span class="w-[33%]">星期二</span><span class="font-bold text-slate-800">8:00-18:00</span></div>
+                            <div class="flex items-center"><span class="w-[33%]">星期六</span><span class="font-bold text-slate-800">8:00-12:00</span></div>
+                            <div class="flex items-center"><span class="w-[33%]">星期三</span><span class="font-bold text-slate-800">8:00-18:00</span></div>
+                            <div class="flex items-center"><span class="w-[33%]">星期日</span><span class="font-bold text-slate-800">8:00-12:00</span></div>
+                            <div class="flex items-center"><span class="w-[33%]">星期四</span><span class="font-bold text-slate-800">8:00-18:00</span></div>
+                        </div>
+                        <div class="pt-2.5 border-t border-dashed border-slate-200 space-y-1.5 text-[11px] text-slate-700 font-medium">
+                            <div class="bg-slate-100/50 py-1.5 px-2 rounded flex items-center justify-between">
+                                <span class="font-semibold text-slate-700">平日 22:00 / 周六、日 12:00-18:00</span>
+                                <span class="font-bold text-brand-blue bg-blue-50 px-2 py-0.5 rounded text-[10px]">出工基本費 2000</span>
+                            </div>
+                            <div class="bg-slate-100/50 py-1.5 px-2 rounded flex items-center justify-between">
+                                <span class="font-semibold text-slate-700">平日 00:00 / 周六、日 18:00-20:00</span>
+                                <span class="font-bold text-brand-blue bg-blue-50 px-2 py-0.5 rounded text-[10px]">出工基本費 3000</span>
+                            </div>
+                            <div class="bg-slate-100/50 py-1.5 px-2 rounded flex items-center justify-between">
+                                <span class="font-semibold text-slate-700">平日 02:00 / 周六、日 20:00-24:00</span>
+                                <span class="font-bold text-brand-blue bg-blue-50 px-2 py-0.5 rounded text-[10px]">出工基本費 4000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-sm font-semibold text-slate-800">台中市清水區中山路560之6號</div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=台中市清水區中山路560之6號" target="_blank" class="text-xs text-blue-600 font-bold">點擊開啟 Google 地圖 📍</a>
+                </div>
+            </section>
         </main>
 
-        <!-- 實績照片燈箱 -->
-        <div id="serviceGalleryModal" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[130] flex items-end sm:items-center justify-center p-0 sm:p-6">
+        <!-- 實績展示燈箱 -->
+        <div id="serviceGalleryModal" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[130] flex items-end sm:items-center justify-center p-0 sm:p-6 transition-all duration-300">
             <div class="bg-white rounded-t-[2rem] sm:rounded-3xl w-full max-w-md max-h-[85vh] flex flex-col shadow-2xl overflow-hidden border border-slate-50">
                 <div class="px-6 py-5 border-b border-slate-100 flex items-center justify-between bg-brand-blue text-white">
                     <div class="flex items-center gap-2.5">
-                        <span id="serviceGalleryEmo" class="text-2xl"></span>
-                        <h3 id="serviceGalleryTitle" class="font-bold text-base">施工實績</h3>
+                        <span id="serviceGalleryEmo" class="text-2xl">🔧</span>
+                        <div>
+                            <h3 id="serviceGalleryTitle" class="font-bold text-base leading-tight">工程實績展示</h3>
+                        </div>
                     </div>
-                    <button onclick="closeServiceGallery()" class="text-white/80 hover:text-white p-1">✕</button>
+                    <button onclick="closeServiceGallery()" class="text-white/80 hover:text-white p-1 rounded-full hover:bg-white/10 transition"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
                 </div>
                 <div id="serviceGalleryContent" class="flex-1 p-6 overflow-y-auto space-y-4 bg-slate-50/50"></div>
+                <div class="p-4 bg-white border-t border-slate-100"><button onclick="closeServiceGallery()" class="w-full py-3 bg-brand-blue text-white font-bold text-xs rounded-xl transition">關閉預覽</button></div>
             </div>
         </div>
 
-        <!-- 燈箱等其他功能 -->
-        <div id="lineModal" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[100] flex items-center justify-center p-6"><div class="bg-white rounded-3xl p-6 w-full max-w-xs text-center relative"><button onclick="toggleLineModal(false)" class="absolute top-4 right-4">✕</button><img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://line.me/ti/p/tj71THzdlI" class="w-40 h-40 mx-auto"></div></div>
-        <div id="licenseGalleryModal" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[140] flex items-center justify-center p-6"><div class="bg-white rounded-3xl w-full max-w-md max-h-[80vh] overflow-y-auto p-6 relative"><button onclick="closeLicenseGallery()" class="absolute top-4 right-4">✕</button><div id="licensePlaceholderGrid" class="space-y-4"></div></div></div>
-        <div id="adminModal" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[200] flex items-center justify-center p-6"><div class="bg-white rounded-3xl p-6 w-full max-w-sm text-center relative"><button onclick="toggleAdminModal(false)" class="absolute top-4 right-4">✕</button><button onclick="exportFinalHtml()" class="w-full py-3 bg-brand-blue text-white rounded-xl">一鍵打包下載</button></div></div>
+        <!-- 輔助燈箱 (LINE, 證照, 名片, 管理) -->
+        <div id="lineModal" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[100] flex items-center justify-center p-6"><div class="bg-white rounded-3xl p-6 w-full max-w-xs text-center relative shadow-2xl border border-slate-100"><button onclick="toggleLineModal(false)" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 transition"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button><div class="text-emerald-600 font-bold text-lg mb-2">💬 加 LINE</div><div class="bg-slate-50 p-4 rounded-2xl inline-block mb-4 border border-slate-100"><a href="https://line.me/ti/p/tj71THzdlI" target="_blank"><img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://line.me/ti/p/tj71THzdlI" class="w-40 h-40 rounded-xl"></a></div></div></div>
+        <div id="licenseGalleryModal" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[140] flex items-end sm:items-center justify-center p-0 sm:p-6 transition-all duration-300"><div class="bg-white rounded-t-[2rem] sm:rounded-3xl w-full max-w-md max-h-[85vh] flex flex-col shadow-2xl overflow-hidden border border-slate-50"><div class="px-6 py-5 border-b border-slate-100 flex items-center justify-between bg-brand-blue text-white"><h3 class="font-bold text-base">國家級證照正本</h3><button onclick="closeLicenseGallery()" class="text-white/80 hover:text-white p-1 rounded-full">✕</button></div><div class="flex-1 p-6 overflow-y-auto space-y-6 bg-slate-50/50" id="licensePlaceholderGrid"></div><div class="p-4 bg-white border-t"><button onclick="closeLicenseGallery()" class="w-full py-3 bg-brand-blue text-white font-bold text-xs rounded-xl">關閉預覽</button></div></div></div>
+        <div id="cardShareModal" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[150] flex items-center justify-center p-6"><div class="bg-white rounded-3xl p-6 w-full max-w-xs text-center relative shadow-2xl"><button onclick="toggleCardModal(false)" class="absolute top-4 right-4 text-slate-400">✕</button><img src="https://wu2136tr-coder.github.io/JianCheng/pics/card.jpg" class="w-full rounded-2xl mb-4"><button onclick="copyCardUrl()" class="w-full py-2.5 bg-brand-blue text-white font-bold text-xs rounded-xl">複製名片連結</button></div></div>
+        <div id="adminModal" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[200] flex items-center justify-center p-6"><div class="bg-white rounded-3xl p-6 w-full max-w-sm relative shadow-2xl"><button onclick="toggleAdminModal(false)" class="absolute top-4 right-4 text-slate-400">✕</button><button onclick="exportFinalHtml()" class="w-full py-3 bg-brand-blue text-white font-bold text-xs rounded-xl">💾 一鍵打包下載</button></div></div>
+
     </div>
 
     <script>
@@ -121,36 +198,66 @@
             "bathroom": ["https://wu2136tr-coder.github.io/JianCheng/pics/bathroom1-b1.jpg", "https://wu2136tr-coder.github.io/JianCheng/pics/bathroom2-a1.jpg"],
             "house_repair": ["https://wu2136tr-coder.github.io/JianCheng/pics/room-b1.jpg", "https://wu2136tr-coder.github.io/JianCheng/pics/room-b2.jpg", "https://wu2136tr-coder.github.io/JianCheng/pics/room-a1.jpg"],
             "project": ["https://wu2136tr-coder.github.io/JianCheng/pics/projext-b1.jpg", "https://wu2136tr-coder.github.io/JianCheng/pics/projext-b2.jpg", "https://wu2136tr-coder.github.io/JianCheng/pics/projext-a1.jpg"],
-            "plumbing": ["https://wu2136tr-coder.github.io/JianCheng/pics/water-pipr.jpg"],
             "licenses": ["https://wu2136tr-coder.github.io/JianCheng/pics/room.jpg", "https://wu2136tr-coder.github.io/JianCheng/pics/room1.jpg", "https://wu2136tr-coder.github.io/JianCheng/pics/electronic.jpg", "https://wu2136tr-coder.github.io/JianCheng/pics/water.jpg", "https://wu2136tr-coder.github.io/JianCheng/pics/water-pipe.jpg"]
         };
 
         function openServiceGallery(id, name, emo) {
-            const modal = document.getElementById('serviceGalleryModal'), content = document.getElementById('serviceGalleryContent');
-            document.getElementById('serviceGalleryTitle').innerText = name; document.getElementById('serviceGalleryEmo').innerText = emo; content.innerHTML = '';
+            const modal = document.getElementById('serviceGalleryModal');
+            const titleElem = document.getElementById('serviceGalleryTitle');
+            const emoElem = document.getElementById('serviceGalleryEmo');
+            const contentElem = document.getElementById('serviceGalleryContent');
+            titleElem.innerText = name; emoElem.innerText = emo; contentElem.innerHTML = '';
             
-            if(id === 'plumbing') {
-                content.innerHTML = `<h4 class="font-bold">水管疏通</h4><img src="https://wu2136tr-coder.github.io/JianCheng/pics/water-pipr.jpg" class="rounded-xl w-full">`;
+            if(id === 'project') {
+                contentElem.innerHTML = `<div class="space-y-4">
+                    <h4 class="text-sm font-bold text-slate-800 border-l-4 border-brand-blue pl-2">更換揚水馬達工程</h4>
+                    <div class="space-y-2">
+                        <span class="text-[9px] font-bold text-red-500 uppercase bg-red-50 px-2 py-0.5 rounded inline-block">施工中</span>
+                        <img src="https://wu2136tr-coder.github.io/JianCheng/pics/projext-b1.jpg" class="rounded-xl w-full">
+                        <img src="https://wu2136tr-coder.github.io/JianCheng/pics/projext-b2.jpg" class="rounded-xl w-full">
+                    </div>
+                    <div class="space-y-2">
+                        <span class="text-[9px] font-bold text-emerald-600 uppercase bg-emerald-50 px-2 py-0.5 rounded inline-block">施工後</span>
+                        <img src="https://wu2136tr-coder.github.io/JianCheng/pics/projext-a1.jpg" class="rounded-xl w-full">
+                    </div>
+                </div>`;
             } else if(id === 'house_repair') {
-                content.innerHTML = `<h4 class="font-bold">水管漏水修繕</h4><div class="space-y-2"><span class="text-[9px] bg-red-100 px-2 py-1 rounded">施工前</span><img src="https://wu2136tr-coder.github.io/JianCheng/pics/room-b1.jpg" class="rounded-xl w-full"><img src="https://wu2136tr-coder.github.io/JianCheng/pics/room-b2.jpg" class="rounded-xl w-full"></div><div class="space-y-2"><span class="text-[9px] bg-green-100 px-2 py-1 rounded">施工後</span><img src="https://wu2136tr-coder.github.io/JianCheng/pics/room-a1.jpg" class="rounded-xl w-full"></div>`;
-            } else if(id === 'project') {
-                content.innerHTML = `<h4 class="font-bold">更換揚水馬達工程</h4><div class="space-y-2"><span class="text-[9px] bg-red-100 px-2 py-1 rounded">施工中</span><img src="https://wu2136tr-coder.github.io/JianCheng/pics/projext-b1.jpg" class="rounded-xl w-full"><img src="https://wu2136tr-coder.github.io/JianCheng/pics/projext-b2.jpg" class="rounded-xl w-full"></div><div class="space-y-2"><span class="text-[9px] bg-green-100 px-2 py-1 rounded">施工後</span><img src="https://wu2136tr-coder.github.io/JianCheng/pics/projext-a1.jpg" class="rounded-xl w-full"></div>`;
+                contentElem.innerHTML = `<div class="space-y-4">
+                    <h4 class="text-sm font-bold text-slate-800 border-l-4 border-brand-blue pl-2">水管漏水修繕</h4>
+                    <div class="space-y-2">
+                        <span class="text-[9px] font-bold text-red-500 uppercase bg-red-50 px-2 py-0.5 rounded inline-block">施工前 (Before)</span>
+                        <img src="https://wu2136tr-coder.github.io/JianCheng/pics/room-b1.jpg" class="rounded-xl w-full">
+                        <img src="https://wu2136tr-coder.github.io/JianCheng/pics/room-b2.jpg" class="rounded-xl w-full">
+                    </div>
+                    <div class="space-y-2">
+                        <span class="text-[9px] font-bold text-emerald-600 uppercase bg-emerald-50 px-2 py-0.5 rounded inline-block">施工後 (After)</span>
+                        <img src="https://wu2136tr-coder.github.io/JianCheng/pics/room-a1.jpg" class="rounded-xl w-full">
+                    </div>
+                </div>`;
             } else if(CLOUD_PERMANENT_PHOTOS[id]) {
-                CLOUD_PERMANENT_PHOTOS[id].forEach(src => content.innerHTML += `<img src="${src}" class="rounded-xl w-full mb-4">`);
-            } else { content.innerHTML = '<p class="text-center text-slate-400">目前尚無實績</p>'; }
+                CLOUD_PERMANENT_PHOTOS[id].forEach(src => contentElem.innerHTML += `<img src="${src}" class="rounded-xl w-full mb-4">`);
+            } else {
+                contentElem.innerHTML = '<p class="text-center text-sm text-slate-400">目前尚無實績照片</p>';
+            }
             modal.classList.remove('hidden');
         }
 
         function closeServiceGallery() { document.getElementById('serviceGalleryModal').classList.add('hidden'); }
         function openLicenseGallery() { document.getElementById('licenseGalleryModal').classList.remove('hidden'); renderLicenses(); }
         function closeLicenseGallery() { document.getElementById('licenseGalleryModal').classList.add('hidden'); }
-        function renderLicenses() { const grid = document.getElementById('licensePlaceholderGrid'); grid.innerHTML = ''; CLOUD_PERMANENT_PHOTOS.licenses.forEach(src => grid.innerHTML += `<img src="${src}" class="rounded-xl border">`); }
+        function renderLicenses() {
+            const grid = document.getElementById('licensePlaceholderGrid'); grid.innerHTML = '';
+            for(let i = 0; i < 5; i++) {
+                const src = CLOUD_PERMANENT_PHOTOS.licenses[i];
+                grid.innerHTML += `<div class="bg-white p-2 rounded-2xl border">${src ? `<img src="${src}" class="rounded-xl">` : '<div class="h-40 flex items-center justify-center text-slate-300">暫無圖片</div>'}</div>`;
+            }
+        }
         function toggleLineModal(s) { document.getElementById('lineModal').classList.toggle('hidden', !s); }
         function toggleAdminModal(s) { document.getElementById('adminModal').classList.toggle('hidden', !s); }
         function toggleCardModal(s) { document.getElementById('cardShareModal').classList.toggle('hidden', !s); }
         function shareApp() { toggleCardModal(true); }
-        function copyCardUrl() { alert("已複製"); }
-        async function exportFinalHtml() { const blob = new Blob([document.documentElement.outerHTML], { type: 'text/html' }); const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'index.html'; a.click(); }
+        function copyCardUrl() { const input = document.createElement("input"); input.value = "https://wu2136tr-coder.github.io/JianCheng/pics/card.jpg"; document.body.appendChild(input); input.select(); document.execCommand('copy'); document.body.removeChild(input); alert("已複製連結"); }
+        async function exportFinalHtml() { const raw = document.documentElement.outerHTML; const blob = new Blob([raw], { type: 'text/html' }); const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = 'index.html'; a.click(); }
     </script>
 </body>
 </html>
