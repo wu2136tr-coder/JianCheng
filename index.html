@@ -89,7 +89,7 @@
                     <div class="p-2.5 bg-white rounded-xl shadow-sm mb-1.5 text-emerald-500"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M21.9 10.4c-.1-4-3.3-7.3-7.4-7.4-4.3-.1-7.8 3.1-7.8 7.4 0 1.9.7 3.6 1.9 5 .2.2.3.5.2.7l-.5 2.1c-.1.5.4.9.9.7l2.1-.8c.2-.1.5 0 .7.1 1 .5 2.1.8 3.3.8 4.3 0 7.7-3.4 7.7-7.7-1.1-.3-1-.9-1.1-.9z"/></svg></div>
                     <span class="text-[11px] font-bold">加 LINE</span>
                 </button>
-                <a href="https://www.google.com/maps/search/?api=1&query=台中市清水區中山路560之6號" target="_blank" class="flex flex-col items-center justify-center p-3.5 bg-rose-50/50 border border-rose-100 rounded-2xl text-rose-800 active:scale-95 transition">
+                <a href="https://www.google.com/maps/search/?api=1&query=台中市清水區中山路560之15號" target="_blank" class="flex flex-col items-center justify-center p-3.5 bg-rose-50/50 border border-rose-100 rounded-2xl text-rose-800 active:scale-95 transition">
                     <div class="p-2.5 bg-white rounded-xl shadow-sm mb-1.5 text-rose-500"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg></div>
                     <span class="text-[11px] font-bold">工廠導航</span>
                 </a>
@@ -139,12 +139,12 @@
                     <!-- 營業時間表與費用明細（精確比率配置） -->
                     <div class="text-xs text-slate-600 space-y-2 border-b border-slate-200/60 pb-3 mb-1">
                         <div class="grid grid-cols-2 gap-x-4 gap-y-1.5 text-slate-700 font-medium">
-                            <!-- 星期一、二、三、四：時間前移 1/3 (w-[33%]) -->
+                            <!-- 星期一、二、三、四 -->
                             <div class="flex items-center">
                                 <span class="w-[33%]">星期一</span>
                                 <span class="font-bold text-slate-800">8:00-18:00</span>
                             </div>
-                            <!-- 星期五、六、日：時間左移 1/3，右側保留空白間距 -->
+                            <!-- 星期五、六、日 -->
                             <div class="flex items-center">
                                 <span class="w-[33%]">星期五</span>
                                 <span class="font-bold text-slate-800">8:00-18:00</span>
@@ -170,23 +170,31 @@
                                 <span class="font-bold text-slate-800">8:00-18:00</span>
                             </div>
                         </div>
-                        <div class="pt-2.5 border-t border-dashed border-slate-200 space-y-0.5 text-[11px] text-slate-500 font-medium">
-                            <div class="flex justify-between items-center bg-slate-100/50 py-0.5 pl-2 pr-0 rounded">
-                                <span class="text-slate-700 font-semibold">平日 22:00 ｜ 周六、日 12:00-18:00</span>
-                                <span class="font-bold text-brand-blue bg-blue-50 px-1.5 py-0.5 rounded text-[10px]">出工基本費 2000</span>
+                        
+                        <!-- 費用明細：與上方網格完全切齊 -->
+                        <div class="pt-2.5 border-t border-dashed border-slate-200 space-y-1 text-[11px] text-slate-700 font-medium">
+                            <div class="grid grid-cols-2 gap-x-4 items-center bg-slate-100/50 py-0.5 rounded">
+                                <span class="font-semibold">平日 22:00 ｜ 周六、日 12:00-18:00</span>
+                                <div>
+                                    <span class="font-bold text-brand-blue bg-blue-50 px-1.5 py-0.5 rounded text-[10px] inline-block">出工基本費 2000</span>
+                                </div>
                             </div>
-                            <div class="flex justify-between items-center bg-slate-100/50 py-0.5 pl-2 pr-0 rounded">
-                                <span class="text-slate-700 font-semibold">平日 00:00 ｜ 周六、日 18:00-20:00</span>
-                                <span class="font-bold text-brand-blue bg-blue-50 px-1.5 py-0.5 rounded text-[10px]">出工基本費 3000</span>
+                            <div class="grid grid-cols-2 gap-x-4 items-center bg-slate-100/50 py-0.5 rounded">
+                                <span class="font-semibold">平日 00:00 ｜ 周六、日 18:00-20:00</span>
+                                <div>
+                                    <span class="font-bold text-brand-blue bg-blue-50 px-1.5 py-0.5 rounded text-[10px] inline-block">出工基本費 3000</span>
+                                </div>
                             </div>
-                            <div class="flex justify-between items-center bg-slate-100/50 py-0.5 pl-2 pr-0 rounded">
-                                <span class="text-slate-700 font-semibold">平日 02:00 ｜ 周六、日 20:00-24:00</span>
-                                <span class="font-bold text-brand-blue bg-blue-50 px-1.5 py-0.5 rounded text-[10px]">出工基本費 4000</span>
+                            <div class="grid grid-cols-2 gap-x-4 items-center bg-slate-100/50 py-0.5 rounded">
+                                <span class="font-semibold">平日 02:00 ｜ 周六、日 20:00-24:00</span>
+                                <div>
+                                    <span class="font-bold text-brand-blue bg-blue-50 px-1.5 py-0.5 rounded text-[10px] inline-block">出工基本費 4000</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="text-sm font-semibold text-slate-800">台中市清水區中山路560之15號</div>
-                    <a href="https://www.google.com/maps/search/?api=1&query=台中市清水區中山路560之15號" target="_blank" class="text-xs text-blue-600 font-bold">點擊開啟 Google 地圖 📍</a>
+                    <div class="text-sm font-semibold text-slate-800">台中市清水區中山路560之6號</div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=台中市清水區中山路560之6號" target="_blank" class="text-xs text-blue-600 font-bold">點擊開啟 Google 地圖 📍</a>
                 </div>
             </section>
         </main>
@@ -220,7 +228,6 @@
                 </div>
                 <div class="flex-1 p-6 overflow-y-auto space-y-6 bg-slate-50/50">
                     <div id="licensePlaceholderGrid" class="space-y-6">
-                        <!-- 生成 5 個證照容器，維持原照片比例 -->
                         <div class="space-y-2">
                             <span class="text-[10px] font-bold text-slate-400">1. 室內配線乙級</span>
                             <div id="lic-box-0"></div>
@@ -247,21 +254,21 @@
             </div>
         </div>
 
-        <!-- 🌟 服務項目實績照片燈箱 -->
+        <!-- 🌟 專業工程項目施工實績燈箱 -->
         <div id="serviceGalleryModal" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[140] flex items-end sm:items-center justify-center p-0 sm:p-6 transition-all duration-300">
             <div class="bg-white rounded-t-[2rem] sm:rounded-3xl w-full max-w-md max-h-[85vh] flex flex-col shadow-2xl overflow-hidden border border-slate-50">
                 <div class="px-6 py-5 border-b border-slate-100 flex items-center justify-between bg-brand-blue text-white">
                     <div class="flex items-center gap-2.5">
                         <span id="serviceGalleryEmo" class="text-2xl">🔧</span>
                         <div>
-                            <h3 id="serviceGalleryTitle" class="font-bold text-base leading-tight">服務實績</h3>
+                            <h3 id="serviceGalleryTitle" class="font-bold text-base leading-tight">施工實績</h3>
                         </div>
                     </div>
                     <button onclick="closeServiceGallery()" class="text-white/80 hover:text-white p-1 rounded-full hover:bg-white/10 transition"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
                 </div>
                 <div class="flex-1 p-6 overflow-y-auto space-y-6 bg-slate-50/50">
                     <div id="serviceGalleryContent" class="space-y-6">
-                        <!-- 動態生成實績照片 -->
+                        <!-- 實績照片與說明將透過 JavaScript 動態載入 -->
                     </div>
                 </div>
                 <div class="p-4 bg-white border-t border-slate-100"><button onclick="closeServiceGallery()" class="w-full py-3 bg-brand-blue text-white font-bold text-xs rounded-xl transition">關閉預覽</button></div>
@@ -300,17 +307,14 @@
         /* START_CLOUD_PHOTOS */
         const CLOUD_PERMANENT_PHOTOS = {
             "water_elec": [
-                {
-                    "url": "https://wu2136tr-coder.github.io/JianCheng/pics/fix-b1.jpg",
-                    "caption": "廚房排水管漏施工前"
-                },
-                {
-                    "url": "https://wu2136tr-coder.github.io/JianCheng/pics/fix-a1.jpg",
-                    "caption": "廚房排水管漏施工後"
-                }
+                "https://wu2136tr-coder.github.io/JianCheng/pics/fix-b1.jpg",
+                "https://wu2136tr-coder.github.io/JianCheng/pics/fix-a1.jpg"
             ],
             "wiring": [],
-            "bathroom": [],
+            "bathroom": [
+                "https://wu2136tr-coder.github.io/JianCheng/pics/bathroom1-b1.jpg",
+                "https://wu2136tr-coder.github.io/JianCheng/pics/bathroom2-a1.jpg"
+            ],
             "lighting": [],
             "house_repair": [],
             "motor": [],
@@ -349,36 +353,73 @@
             }
         }
 
-        // 開啟專業服務實績照片燈箱
+        // 點擊專業工程項目實績相片動態注入處理邏輯
         function openServiceGallery(id, name, emo) {
-            document.getElementById('serviceGalleryTitle').innerText = `${name} 實績照片`;
-            document.getElementById('serviceGalleryEmo').innerText = emo;
+            const modal = document.getElementById('serviceGalleryModal');
+            const titleElem = document.getElementById('serviceGalleryTitle');
+            const emoElem = document.getElementById('serviceGalleryEmo');
+            const contentElem = document.getElementById('serviceGalleryContent');
             
-            const container = document.getElementById('serviceGalleryContent');
-            container.innerHTML = '';
+            titleElem.innerText = `${name} 施工實績`;
+            emoElem.innerText = emo;
+            contentElem.innerHTML = '';
             
-            const photos = CLOUD_PERMANENT_PHOTOS[id] || [];
-            if (photos.length === 0) {
-                container.innerHTML = `
-                    <div class="text-center py-12 text-slate-400">
-                        <span class="text-4xl block mb-2">📸</span>
-                        <p class="text-xs">尚無該項目的實績照片</p>
+            if (id === 'water_elec') {
+                contentElem.innerHTML = `
+                    <div class="space-y-4">
+                        <h4 class="text-sm font-bold text-slate-800 border-l-4 border-brand-blue pl-2">廚房水槽漏水施工前後</h4>
+                        <div class="grid grid-cols-1 gap-4">
+                            <div class="space-y-1.5">
+                                <span class="text-[10px] font-bold text-red-500 uppercase bg-red-50 px-2 py-0.5 rounded">施工前 (Before)</span>
+                                <div class="rounded-2xl border border-slate-100 overflow-hidden bg-white shadow-sm">
+                                    <img src="https://wu2136tr-coder.github.io/JianCheng/pics/fix-b1.jpg" class="w-full h-auto block" alt="廚房水槽漏水施工前">
+                                </div>
+                            </div>
+                            <div class="space-y-1.5">
+                                <span class="text-[10px] font-bold text-emerald-600 uppercase bg-emerald-50 px-2 py-0.5 rounded">施工後 (After)</span>
+                                <div class="rounded-2xl border border-slate-100 overflow-hidden bg-white shadow-sm">
+                                    <img src="https://wu2136tr-coder.github.io/JianCheng/pics/fix-a1.jpg" class="w-full h-auto block" alt="廚房水槽漏水施工後">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 `;
-            } else {
-                photos.forEach(item => {
-                    const itemEl = document.createElement('div');
-                    itemEl.className = "space-y-2";
-                    itemEl.innerHTML = `
-                        <span class="text-[10px] font-bold text-slate-400 block">${item.caption}</span>
-                        <div class="rounded-2xl border border-slate-100 overflow-hidden bg-white shadow-sm">
-                            <img src="${item.url}" class="w-full h-auto block" alt="${item.caption}">
+                modal.classList.remove('hidden');
+            } else if (id === 'bathroom') {
+                contentElem.innerHTML = `
+                    <div class="space-y-4">
+                        <h4 class="text-sm font-bold text-slate-800 border-l-4 border-brand-blue pl-2">淋浴柱更換前後的圖片佔位符</h4>
+                        <!-- 整合為單一佔位符容器 -->
+                        <div class="rounded-2xl border border-slate-100 overflow-hidden bg-white shadow-sm p-4">
+                            <div class="grid grid-cols-2 gap-3">
+                                <div class="space-y-1.5">
+                                    <span class="text-[9px] font-bold text-red-500 uppercase bg-red-50 px-2 py-0.5 rounded inline-block">施工前 (Before)</span>
+                                    <div class="rounded-xl overflow-hidden border border-slate-100 shadow-sm bg-slate-50">
+                                        <img src="https://wu2136tr-coder.github.io/JianCheng/pics/bathroom1-b1.jpg" class="w-full h-auto block" alt="施工前">
+                                    </div>
+                                </div>
+                                <div class="space-y-1.5">
+                                    <span class="text-[9px] font-bold text-emerald-600 uppercase bg-emerald-50 px-2 py-0.5 rounded inline-block">施工後 (After)</span>
+                                    <div class="rounded-xl overflow-hidden border border-slate-100 shadow-sm bg-slate-50">
+                                        <img src="https://wu2136tr-coder.github.io/JianCheng/pics/bathroom2-a1.jpg" class="w-full h-auto block" alt="施工後">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    `;
-                    container.appendChild(itemEl);
-                });
+                    </div>
+                `;
+                modal.classList.remove('hidden');
+            } else {
+                contentElem.innerHTML = `
+                    <div class="flex flex-col items-center justify-center py-12 text-slate-400">
+                        <svg class="w-12 h-12 mb-3 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                        <span class="text-xs">目前尚無此項目的實績照片</span>
+                    </div>
+                `;
+                modal.classList.remove('hidden');
             }
-            document.getElementById('serviceGalleryModal').classList.remove('hidden');
         }
 
         function closeServiceGallery() {
@@ -401,18 +442,9 @@
 
         function toggleLineModal(s) { document.getElementById('lineModal').classList.toggle('hidden', !s); }
         function toggleAdminModal(s) { document.getElementById('adminModal').classList.toggle('hidden', !s); }
-        
-        // 行動名片圖檔燈箱開關
-        function toggleCardModal(s) {
-            document.getElementById('cardShareModal').classList.toggle('hidden', !s);
-        }
+        function toggleCardModal(s) { document.getElementById('cardShareModal').classList.toggle('hidden', !s); }
+        function shareApp() { toggleCardModal(true); }
 
-        // 行動呼籲(CAT) 分享名片功能：彈出精美名片圖檔供儲存分享
-        function shareApp() { 
-            toggleCardModal(true);
-        }
-
-        // 複製名片大圖 URL 到剪貼簿
         function copyCardUrl() {
             const cardUrl = "https://wu2136tr-coder.github.io/JianCheng/pics/card.jpg";
             const tempInput = document.createElement("input");
@@ -422,7 +454,6 @@
             document.execCommand('copy');
             document.body.removeChild(tempInput);
             
-            // 自訂 Toast 提示
             const toast = document.createElement("div");
             toast.className = "fixed bottom-24 left-1/2 -translate-x-1/2 bg-slate-800 text-white text-xs px-4 py-2 rounded-full shadow-lg z-[210] transition-opacity duration-300";
             toast.innerText = "已複製名片大圖連結！";
