@@ -136,60 +136,31 @@
                 <h2 class="text-base font-bold text-slate-800 flex items-center gap-2"><span class="w-1.5 h-4 bg-brand-blue rounded-full"></span>營業時間與地址</h2>
                 <div class="bg-slate-50 border border-slate-100 rounded-2xl p-4 flex flex-col gap-3">
                     
-                    <!-- 營業時間表與費用明細（精確比率配置） -->
+                    <!-- 營業時間表與費用明細（調整為單列呈現） -->
                     <div class="text-xs text-slate-600 space-y-2 border-b border-slate-200/60 pb-3 mb-1">
                         <div class="grid grid-cols-2 gap-x-4 gap-y-1.5 text-slate-700 font-medium">
-                            <!-- 星期一、二、三、四 -->
-                            <div class="flex items-center">
-                                <span class="w-[33%]">星期一</span>
-                                <span class="font-bold text-slate-800">8:00-18:00</span>
-                            </div>
-                            <!-- 星期五、六、日 -->
-                            <div class="flex items-center">
-                                <span class="w-[33%]">星期五</span>
-                                <span class="font-bold text-slate-800">8:00-18:00</span>
-                            </div>
-                            <div class="flex items-center">
-                                <span class="w-[33%]">星期二</span>
-                                <span class="font-bold text-slate-800">8:00-18:00</span>
-                            </div>
-                            <div class="flex items-center">
-                                <span class="w-[33%]">星期六</span>
-                                <span class="font-bold text-slate-800">8:00-12:00</span>
-                            </div>
-                            <div class="flex items-center">
-                                <span class="w-[33%]">星期三</span>
-                                <span class="font-bold text-slate-800">8:00-18:00</span>
-                            </div>
-                            <div class="flex items-center">
-                                <span class="w-[33%]">星期日</span>
-                                <span class="font-bold text-slate-800">8:00-12:00</span>
-                            </div>
-                            <div class="flex items-center">
-                                <span class="w-[33%]">星期四</span>
-                                <span class="font-bold text-slate-800">8:00-18:00</span>
-                            </div>
+                            <div class="flex items-center"><span class="w-[33%]">星期一</span><span class="font-bold text-slate-800">8:00-18:00</span></div>
+                            <div class="flex items-center"><span class="w-[33%]">星期五</span><span class="font-bold text-slate-800">8:00-18:00</span></div>
+                            <div class="flex items-center"><span class="w-[33%]">星期二</span><span class="font-bold text-slate-800">8:00-18:00</span></div>
+                            <div class="flex items-center"><span class="w-[33%]">星期六</span><span class="font-bold text-slate-800">8:00-12:00</span></div>
+                            <div class="flex items-center"><span class="w-[33%]">星期三</span><span class="font-bold text-slate-800">8:00-18:00</span></div>
+                            <div class="flex items-center"><span class="w-[33%]">星期日</span><span class="font-bold text-slate-800">8:00-12:00</span></div>
+                            <div class="flex items-center"><span class="w-[33%]">星期四</span><span class="font-bold text-slate-800">8:00-18:00</span></div>
                         </div>
                         
-                        <!-- 費用明細：與上方網格完全切齊 -->
-                        <div class="pt-2.5 border-t border-dashed border-slate-200 space-y-1 text-[11px] text-slate-700 font-medium">
-                            <div class="grid grid-cols-2 gap-x-4 items-center bg-slate-100/50 py-0.5 rounded">
-                                <span class="font-semibold">平日 22:00 ｜ 周六、日 12:00-18:00</span>
-                                <div>
-                                    <span class="font-bold text-brand-blue bg-blue-50 px-1.5 py-0.5 rounded text-[10px] inline-block">出工基本費 2000</span>
-                                </div>
+                        <!-- 費用明細：單列顯示 -->
+                        <div class="pt-2.5 border-t border-dashed border-slate-200 space-y-1.5 text-[11px] text-slate-700 font-medium">
+                            <div class="bg-slate-100/50 py-1.5 px-2 rounded flex items-center justify-between">
+                                <span class="font-semibold text-slate-700">平日 22:00 / 周六、日 12:00-18:00</span>
+                                <span class="font-bold text-brand-blue bg-blue-50 px-2 py-0.5 rounded text-[10px]">出工基本費 2000</span>
                             </div>
-                            <div class="grid grid-cols-2 gap-x-4 items-center bg-slate-100/50 py-0.5 rounded">
-                                <span class="font-semibold">平日 00:00 ｜ 周六、日 18:00-20:00</span>
-                                <div>
-                                    <span class="font-bold text-brand-blue bg-blue-50 px-1.5 py-0.5 rounded text-[10px] inline-block">出工基本費 3000</span>
-                                </div>
+                            <div class="bg-slate-100/50 py-1.5 px-2 rounded flex items-center justify-between">
+                                <span class="font-semibold text-slate-700">平日 00:00 / 周六、日 18:00-20:00</span>
+                                <span class="font-bold text-brand-blue bg-blue-50 px-2 py-0.5 rounded text-[10px]">出工基本費 3000</span>
                             </div>
-                            <div class="grid grid-cols-2 gap-x-4 items-center bg-slate-100/50 py-0.5 rounded">
-                                <span class="font-semibold">平日 02:00 ｜ 周六、日 20:00-24:00</span>
-                                <div>
-                                    <span class="font-bold text-brand-blue bg-blue-50 px-1.5 py-0.5 rounded text-[10px] inline-block">出工基本費 4000</span>
-                                </div>
+                            <div class="bg-slate-100/50 py-1.5 px-2 rounded flex items-center justify-between">
+                                <span class="font-semibold text-slate-700">平日 02:00 / 周六、日 20:00-24:00</span>
+                                <span class="font-bold text-brand-blue bg-blue-50 px-2 py-0.5 rounded text-[10px]">出工基本費 4000</span>
                             </div>
                         </div>
                     </div>
@@ -353,7 +324,6 @@
             }
         }
 
-        // 點擊專業工程項目實績相片動態注入處理邏輯
         function openServiceGallery(id, name, emo) {
             const modal = document.getElementById('serviceGalleryModal');
             const titleElem = document.getElementById('serviceGalleryTitle');
@@ -388,10 +358,9 @@
             } else if (id === 'bathroom') {
                 contentElem.innerHTML = `
                     <div class="space-y-4">
-                        <h4 class="text-sm font-bold text-slate-800 border-l-4 border-brand-blue pl-2">淋浴柱更換前後的圖片佔位符</h4>
-                        <!-- 整合為單一佔位符容器 -->
+                        <h4 class="text-sm font-bold text-slate-800 border-l-4 border-brand-blue pl-2">淋浴柱更換施工前後</h4>
                         <div class="rounded-2xl border border-slate-100 overflow-hidden bg-white shadow-sm p-4">
-                            <div class="grid grid-cols-2 gap-3">
+                            <div class="flex flex-col gap-4">
                                 <div class="space-y-1.5">
                                     <span class="text-[9px] font-bold text-red-500 uppercase bg-red-50 px-2 py-0.5 rounded inline-block">施工前 (Before)</span>
                                     <div class="rounded-xl overflow-hidden border border-slate-100 shadow-sm bg-slate-50">
