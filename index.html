@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
 <head>
@@ -28,7 +29,7 @@
     </script>
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght=300;400;500;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
         body {
             font-family: 'Noto Sans TC', sans-serif;
             background-color: #F8FAFC; 
@@ -54,7 +55,7 @@
                     <p class="text-xs text-blue-200 mt-1.5 tracking-widest font-light">用心服務 ｜ 品質保證</p>
                 </div>
                 <button onclick="toggleAdminModal(true)" class="text-blue-300 hover:text-white transition duration-200 p-2 hover:bg-white/10 rounded-xl">
-                    <svg class="w-10 h-10 animate-[spin_12s_linear_infinite]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    <svg class="w-10 h-10 overflow-visible animate-[spin_12s_linear_infinite]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                 </button>
             </div>
             <div class="text-xs text-blue-300 font-mono tracking-wider">統一編號：00852834</div>
@@ -187,91 +188,225 @@
         <div id="lineModal" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[100] flex items-center justify-center p-6"><div class="bg-white rounded-3xl p-6 w-full max-w-xs text-center relative shadow-2xl border border-slate-100"><button onclick="toggleLineModal(false)" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 transition"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button><div class="text-emerald-600 font-bold text-lg mb-2">💬 加 LINE</div><div class="bg-slate-50 p-4 rounded-2xl inline-block mb-4 border border-slate-100"><a href="https://line.me/ti/p/tj71THzdlI" target="_blank"><img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://line.me/ti/p/tj71THzdlI" class="w-40 h-40 rounded-xl"></a></div></div></div>
         <div id="licenseGalleryModal" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[140] flex items-end sm:items-center justify-center p-0 sm:p-6 transition-all duration-300"><div class="bg-white rounded-t-[2rem] sm:rounded-3xl w-full max-w-md max-h-[85vh] flex flex-col shadow-2xl overflow-hidden border border-slate-50"><div class="px-6 py-5 border-b border-slate-100 flex items-center justify-between bg-brand-blue text-white"><h3 class="font-bold text-base">國家級證照正本</h3><button onclick="closeLicenseGallery()" class="text-white/80 hover:text-white p-1 rounded-full">✕</button></div><div class="flex-1 p-6 overflow-y-auto space-y-6 bg-slate-50/50" id="licensePlaceholderGrid"></div><div class="p-4 bg-white border-t"><button onclick="closeLicenseGallery()" class="w-full py-3 bg-brand-blue text-white font-bold text-xs rounded-xl">關閉預覽</button></div></div></div>
         <div id="cardShareModal" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[150] flex items-center justify-center p-6"><div class="bg-white rounded-3xl p-6 w-full max-w-xs text-center relative shadow-2xl"><button onclick="toggleCardModal(false)" class="absolute top-4 right-4 text-slate-400">✕</button><img src="https://wu2136tr-coder.github.io/JianCheng/pics/card.jpg" class="w-full rounded-2xl mb-4"><button onclick="copyCardUrl()" class="w-full py-2.5 bg-brand-blue text-white font-bold text-xs rounded-xl">複製名片連結</button></div></div>
-        <div id="adminModal" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[200] flex items-center justify-center p-6"><div class="bg-white rounded-3xl p-6 w-full max-w-sm relative shadow-2xl"><button onclick="toggleAdminModal(false)" class="absolute top-4 right-4 text-slate-400">✕</button><button onclick="exportFinalHtml()" class="w-full py-3 bg-brand-blue text-white font-bold text-xs rounded-xl">💾 一鍵打包下載</button></div></div>
+        <div id="adminModal" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[200] flex items-end sm:items-center justify-center p-0 sm:p-6">
+            <div class="bg-white rounded-t-[2rem] sm:rounded-3xl w-full max-w-md max-h-[90vh] flex flex-col relative shadow-2xl overflow-hidden border border-slate-50">
+                <div class="px-6 py-4 border-b border-slate-100 flex items-center justify-between bg-brand-blue text-white">
+                    <h3 class="font-bold text-base">🛠️ 服務照片管理（臨時編輯區）</h3>
+                    <button onclick="toggleAdminModal(false)" class="text-white/80 hover:text-white p-1">✕</button>
+                </div>
+                <div class="flex-1 overflow-y-auto overflow-x-hidden p-5 space-y-4 bg-slate-50/50">
+                    <p class="text-[11px] text-slate-500 leading-relaxed bg-blue-50 border border-blue-100 rounded-lg p-2.5">選擇服務 → 貼上照片網址（每行一個）→「套用並預覽」確認效果 → 最後按「打包下載」取得新的 index.html，重新上傳到 GitHub，所有訪客即可看到。此區僅店家使用，訪客看不到。</p>
+                    <div>
+                        <label class="text-[11px] font-bold text-slate-500 block mb-1">服務項目</label>
+                        <select id="editorService" onchange="loadServiceIntoForm(this.value)" class="w-full text-sm border border-slate-200 rounded-lg px-2 py-2 bg-white"></select>
+                    </div>
+                    <div>
+                        <label class="text-[11px] font-bold text-slate-500 block mb-1">彈窗標題</label>
+                        <input id="editorTitle" class="w-full text-sm border border-slate-200 rounded-lg px-2 py-2" placeholder="例：更換揚水馬達工程">
+                    </div>
+                    <div>
+                        <div class="flex items-center justify-between mb-1">
+                            <label class="text-[11px] font-bold text-slate-500">照片分組</label>
+                            <button onclick="addGroup()" class="text-[11px] font-bold text-brand-blue">+ 新增分組</button>
+                        </div>
+                        <div id="editorGroups" class="space-y-2"></div>
+                    </div>
+                </div>
+                <div class="p-4 bg-white border-t border-slate-100 grid grid-cols-2 gap-2">
+                    <button onclick="applyAndPreview()" class="py-3 border border-brand-blue text-brand-blue font-bold text-xs rounded-xl active:scale-95 transition">套用並預覽</button>
+                    <button onclick="exportFinalHtml()" class="py-3 bg-brand-blue text-white font-bold text-xs rounded-xl active:scale-95 transition">💾 打包下載</button>
+                </div>
+            </div>
+        </div>
 
     </div>
 
+    <script type="application/json" id="servicePhotoData">
+{"water_elec": {"title": "水電維修", "groups": [{"label": "", "color": "none", "photos": ["https://wu2136tr-coder.github.io/JianCheng/pics/fix-b1.jpg", "https://wu2136tr-coder.github.io/JianCheng/pics/fix-a1.jpg"]}]}, "wiring": {"title": "電表申請", "groups": [{"label": "施工中", "color": "red", "photos": ["https://wu2136tr-coder.github.io/JianCheng/pics/wiring.jpg", "https://wu2136tr-coder.github.io/JianCheng/pics/wiring1.jpg", "https://wu2136tr-coder.github.io/JianCheng/pics/wiring2.jpg", "https://wu2136tr-coder.github.io/JianCheng/pics/wiring3.jpg"]}, {"label": "施工後", "color": "emerald", "photos": ["https://wu2136tr-coder.github.io/JianCheng/pics/wiring4.jpg"]}]}, "bathroom": {"title": "衛浴設備", "groups": [{"label": "", "color": "none", "photos": ["https://wu2136tr-coder.github.io/JianCheng/pics/bathroom1-b1.jpg", "https://wu2136tr-coder.github.io/JianCheng/pics/bathroom2-a1.jpg"]}]}, "lighting": {"title": "燈具安裝", "groups": []}, "house_repair": {"title": "水管漏水修繕", "groups": [{"label": "施工前 (Before)", "color": "red", "photos": ["https://wu2136tr-coder.github.io/JianCheng/pics/room-b1.jpg", "https://wu2136tr-coder.github.io/JianCheng/pics/room-b2.jpg"]}, {"label": "施工後 (After)", "color": "emerald", "photos": ["https://wu2136tr-coder.github.io/JianCheng/pics/room-a1.jpg"]}]}, "motor": {"title": "馬達安裝", "groups": []}, "project": {"title": "更換揚水馬達工程", "groups": [{"label": "施工中", "color": "red", "photos": ["https://wu2136tr-coder.github.io/JianCheng/pics/projext-b1.jpg", "https://wu2136tr-coder.github.io/JianCheng/pics/projext-b2.jpg"]}, {"label": "施工後", "color": "emerald", "photos": ["https://wu2136tr-coder.github.io/JianCheng/pics/projext-a1.jpg"]}]}, "plumbing": {"title": "水管疏通", "groups": []}, "licenses": {"title": "國家級證照正本", "groups": [{"label": "", "color": "none", "photos": ["https://wu2136tr-coder.github.io/JianCheng/pics/room.jpg", "https://wu2136tr-coder.github.io/JianCheng/pics/room1.jpg", "https://wu2136tr-coder.github.io/JianCheng/pics/electronic.jpg", "https://wu2136tr-coder.github.io/JianCheng/pics/water.jpg", "https://wu2136tr-coder.github.io/JianCheng/pics/water-pipe.jpg"]}]}}
+    </script>
     <script>
-        const CLOUD_PERMANENT_PHOTOS = {
-            "water_elec": ["https://wu2136tr-coder.github.io/JianCheng/pics/fix-b1.jpg", "https://wu2136tr-coder.github.io/JianCheng/pics/fix-a1.jpg"],
-            "bathroom": ["https://wu2136tr-coder.github.io/JianCheng/pics/bathroom1-b1.jpg", "https://wu2136tr-coder.github.io/JianCheng/pics/bathroom2-a1.jpg"],
-            "house_repair": ["https://wu2136tr-coder.github.io/JianCheng/pics/room-b1.jpg", "https://wu2136tr-coder.github.io/JianCheng/pics/room-b2.jpg", "https://wu2136tr-coder.github.io/JianCheng/pics/room-a1.jpg"],
-            "project": ["https://wu2136tr-coder.github.io/JianCheng/pics/projext-b1.jpg", "https://wu2136tr-coder.github.io/JianCheng/pics/projext-b2.jpg", "https://wu2136tr-coder.github.io/JianCheng/pics/projext-a1.jpg"],
-            "licenses": ["https://wu2136tr-coder.github.io/JianCheng/pics/room.jpg", "https://wu2136tr-coder.github.io/JianCheng/pics/room1.jpg", "https://wu2136tr-coder.github.io/JianCheng/pics/electronic.jpg", "https://wu2136tr-coder.github.io/JianCheng/pics/water.jpg", "https://wu2136tr-coder.github.io/JianCheng/pics/water-pipe.jpg"]
+        // === SERVICE DATA APP ===
+        const SERVICE_LABELS = {
+            water_elec: "水電維修", wiring: "室內配線（電表申請）", bathroom: "衛浴設備",
+            lighting: "燈具安裝", house_repair: "房屋修繕", motor: "馬達安裝",
+            project: "工程承包", plumbing: "水管疏通", licenses: "國家證照"
+        };
+        const EMO_MAP = {
+            water_elec: '🔧', wiring: '🔌', bathroom: '🚿', lighting: '💡',
+            house_repair: '🏠', motor: '⚙️', project: '📋', plumbing: '🌀', licenses: '📜'
+        };
+        const COLOR_CLASS = {
+            none: "", red: "text-red-500 bg-red-50",
+            emerald: "text-emerald-600 bg-emerald-50", blue: "text-blue-600 bg-blue-50"
         };
 
+        let serviceData = {};
+        try {
+            serviceData = JSON.parse(document.getElementById('servicePhotoData').textContent || '{}');
+        } catch (e) {
+            console.error('servicePhotoData 解析失敗', e);
+            serviceData = {};
+        }
+
+        function syncDataBlock() {
+            document.getElementById('servicePhotoData').textContent = JSON.stringify(serviceData);
+        }
+
+        /* ---------- 公開展示（訪客看到的部分） ---------- */
         function openServiceGallery(id, name, emo) {
             const modal = document.getElementById('serviceGalleryModal');
             const titleElem = document.getElementById('serviceGalleryTitle');
             const emoElem = document.getElementById('serviceGalleryEmo');
             const contentElem = document.getElementById('serviceGalleryContent');
-            titleElem.innerText = (id === 'wiring') ? '電表申請' : name; emoElem.innerText = emo; contentElem.innerHTML = '';
-            
-            if(id === 'wiring') {
-                contentElem.innerHTML = `<div class="space-y-4">
-                    <h4 class="text-sm font-bold text-slate-800 border-l-4 border-brand-blue pl-2">電表申請</h4>
-                    <div class="space-y-2">
-                        <span class="text-[9px] font-bold text-red-500 uppercase bg-red-50 px-2 py-0.5 rounded inline-block">施工中</span>
-                        <img src="https://wu2136tr-coder.github.io/JianCheng/pics/wiring.jpg" class="rounded-xl w-full">
-                        <img src="https://wu2136tr-coder.github.io/JianCheng/pics/wiring1.jpg" class="rounded-xl w-full">
-                        <img src="https://wu2136tr-coder.github.io/JianCheng/pics/wiring2.jpg" class="rounded-xl w-full">
-                        <img src="https://wu2136tr-coder.github.io/JianCheng/pics/wiring3.jpg" class="rounded-xl w-full">
-                    </div>
-                    <div class="space-y-2">
-                        <span class="text-[9px] font-bold text-emerald-600 uppercase bg-emerald-50 px-2 py-0.5 rounded inline-block">施工後</span>
-                        <img src="https://wu2136tr-coder.github.io/JianCheng/pics/wiring4.jpg" class="rounded-xl w-full">
-                    </div>
-                </div>`;
-            } else if(id === 'project') {
-                contentElem.innerHTML = `<div class="space-y-4">
-                    <h4 class="text-sm font-bold text-slate-800 border-l-4 border-brand-blue pl-2">更換揚水馬達工程</h4>
-                    <div class="space-y-2">
-                        <span class="text-[9px] font-bold text-red-500 uppercase bg-red-50 px-2 py-0.5 rounded inline-block">施工中</span>
-                        <img src="https://wu2136tr-coder.github.io/JianCheng/pics/projext-b1.jpg" class="rounded-xl w-full">
-                        <img src="https://wu2136tr-coder.github.io/JianCheng/pics/projext-b2.jpg" class="rounded-xl w-full">
-                    </div>
-                    <div class="space-y-2">
-                        <span class="text-[9px] font-bold text-emerald-600 uppercase bg-emerald-50 px-2 py-0.5 rounded inline-block">施工後</span>
-                        <img src="https://wu2136tr-coder.github.io/JianCheng/pics/projext-a1.jpg" class="rounded-xl w-full">
-                    </div>
-                </div>`;
-            } else if(id === 'house_repair') {
-                contentElem.innerHTML = `<div class="space-y-4">
-                    <h4 class="text-sm font-bold text-slate-800 border-l-4 border-brand-blue pl-2">水管漏水修繕</h4>
-                    <div class="space-y-2">
-                        <span class="text-[9px] font-bold text-red-500 uppercase bg-red-50 px-2 py-0.5 rounded inline-block">施工前 (Before)</span>
-                        <img src="https://wu2136tr-coder.github.io/JianCheng/pics/room-b1.jpg" class="rounded-xl w-full">
-                        <img src="https://wu2136tr-coder.github.io/JianCheng/pics/room-b2.jpg" class="rounded-xl w-full">
-                    </div>
-                    <div class="space-y-2">
-                        <span class="text-[9px] font-bold text-emerald-600 uppercase bg-emerald-50 px-2 py-0.5 rounded inline-block">施工後 (After)</span>
-                        <img src="https://wu2136tr-coder.github.io/JianCheng/pics/room-a1.jpg" class="rounded-xl w-full">
-                    </div>
-                </div>`;
-            } else if(CLOUD_PERMANENT_PHOTOS[id]) {
-                CLOUD_PERMANENT_PHOTOS[id].forEach(src => contentElem.innerHTML += `<img src="${src}" class="rounded-xl w-full mb-4">`);
-            } else {
-                contentElem.innerHTML = '<p class="text-center text-sm text-slate-400">目前尚無實績照片</p>';
-            }
+            const data = serviceData[id];
+            titleElem.innerText = (data && data.title) ? data.title : name;
+            emoElem.innerText = emo;
+            contentElem.innerHTML = renderGalleryHtml(data);
             modal.classList.remove('hidden');
         }
 
+        function renderGalleryHtml(data) {
+            const groups = (data && Array.isArray(data.groups)) ? data.groups : [];
+            const total = groups.reduce((n, g) => n + ((g.photos || []).filter(Boolean).length), 0);
+            if (total === 0) return '<p class="text-center text-sm text-slate-400">目前尚無實績照片</p>';
+            const hasLabel = groups.some(g => g.label && g.label.trim());
+            // 平鋪模式（無任何標籤）：維持原本樣式
+            if (!hasLabel) {
+                return groups.flatMap(g => g.photos || []).filter(Boolean)
+                    .map(src => `<img src="${src}" class="rounded-xl w-full mb-4">`).join('');
+            }
+            // 分組模式（施工前 / 中 / 後）
+            let html = '<div class="space-y-4">';
+            if (data.title) html += `<h4 class="text-sm font-bold text-slate-800 border-l-4 border-brand-blue pl-2">${data.title}</h4>`;
+            groups.forEach(g => {
+                const photos = (g.photos || []).filter(Boolean);
+                if (!photos.length) return;
+                html += '<div class="space-y-2">';
+                if (g.label && g.label.trim()) {
+                    const cc = COLOR_CLASS[g.color] || COLOR_CLASS.red;
+                    html += `<span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded inline-block ${cc}">${g.label}</span>`;
+                }
+                photos.forEach(src => html += `<img src="${src}" class="rounded-xl w-full">`);
+                html += '</div>';
+            });
+            html += '</div>';
+            return html;
+        }
+
         function closeServiceGallery() { document.getElementById('serviceGalleryModal').classList.add('hidden'); }
+
         function openLicenseGallery() { document.getElementById('licenseGalleryModal').classList.remove('hidden'); renderLicenses(); }
         function closeLicenseGallery() { document.getElementById('licenseGalleryModal').classList.add('hidden'); }
         function renderLicenses() {
             const grid = document.getElementById('licensePlaceholderGrid'); grid.innerHTML = '';
-            for(let i = 0; i < 5; i++) {
-                const src = CLOUD_PERMANENT_PHOTOS.licenses[i];
-                grid.innerHTML += `<div class="bg-white p-2 rounded-2xl border">${src ? `<img src="${src}" class="rounded-xl">` : '<div class="h-40 flex items-center justify-center text-slate-300">暫無圖片</div>'}</div>`;
-            }
+            const lic = (serviceData.licenses && serviceData.licenses.groups && serviceData.licenses.groups[0] && serviceData.licenses.groups[0].photos) || [];
+            const valid = lic.filter(Boolean);
+            if (!valid.length) { grid.innerHTML = '<div class="h-40 flex items-center justify-center text-slate-300">暫無圖片</div>'; return; }
+            valid.forEach(src => grid.innerHTML += `<div class="bg-white p-2 rounded-2xl border"><img src="${src}" class="rounded-xl"></div>`);
         }
+
+        /* ---------- 其他 modal ---------- */
         function toggleLineModal(s) { document.getElementById('lineModal').classList.toggle('hidden', !s); }
-        function toggleAdminModal(s) { document.getElementById('adminModal').classList.toggle('hidden', !s); }
+        function toggleAdminModal(s) { document.getElementById('adminModal').classList.toggle('hidden', !s); if (s) initEditor(); }
         function toggleCardModal(s) { document.getElementById('cardShareModal').classList.toggle('hidden', !s); }
         function shareApp() { toggleCardModal(true); }
-        function copyCardUrl() { const input = document.createElement("input"); input.value = "https://wu2136tr-coder.github.io/JianCheng/pics/card.jpg"; document.body.appendChild(input); input.select(); document.execCommand('copy'); document.body.removeChild(input); alert("已複製連結"); }
-        async function exportFinalHtml() { const raw = document.documentElement.outerHTML; const blob = new Blob([raw], { type: 'text/html' }); const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = 'index.html'; a.click(); }
+        function copyCardUrl() {
+            const url = "https://wu2136tr-coder.github.io/JianCheng/pics/card.jpg";
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(url).then(() => alert("已複製連結")).catch(() => legacyCopy(url));
+            } else { legacyCopy(url); }
+        }
+        function legacyCopy(text) {
+            const input = document.createElement("input"); input.value = text;
+            document.body.appendChild(input); input.select();
+            try { document.execCommand('copy'); alert("已複製連結"); } catch (e) { alert("複製失敗，請手動複製"); }
+            document.body.removeChild(input);
+        }
+
+        /* ---------- 臨時編輯區（齒輪進入，僅店家使用） ---------- */
+        function initEditor() {
+            const sel = document.getElementById('editorService');
+            if (!sel.dataset.ready) {
+                sel.innerHTML = Object.keys(SERVICE_LABELS)
+                    .map(k => `<option value="${k}">${SERVICE_LABELS[k]}</option>`).join('');
+                sel.dataset.ready = '1';
+            }
+            loadServiceIntoForm(sel.value || Object.keys(SERVICE_LABELS)[0]);
+        }
+
+        function loadServiceIntoForm(id) {
+            document.getElementById('editorService').value = id;
+            const data = serviceData[id] || { title: '', groups: [] };
+            document.getElementById('editorTitle').value = data.title || '';
+            const groups = (data.groups && data.groups.length) ? data.groups : [{ label: '', color: 'none', photos: [] }];
+            document.getElementById('editorGroups').innerHTML = groups.map((g, i) => groupRowHtml(g, i)).join('');
+        }
+
+        function groupRowHtml(g, i) {
+            const colors = ['none', 'red', 'emerald', 'blue'];
+            const colorLabels = { none: '無標籤', red: '施工前/中 🔴', emerald: '施工後 🟢', blue: '一般 🔵' };
+            const opts = colors.map(c => `<option value="${c}" ${g.color === c ? 'selected' : ''}>${colorLabels[c]}</option>`).join('');
+            const photos = (g.photos || []).join('\n');
+            const labelVal = (g.label || '').replace(/&/g, '&amp;').replace(/"/g, '&quot;');
+            return `<div class="border border-slate-200 rounded-xl p-3 space-y-2 bg-white" data-group="${i}">
+                <div class="flex gap-2">
+                    <input class="flex-1 min-w-0 text-xs border border-slate-200 rounded-lg px-2 py-1.5" placeholder="分組標籤（可留空＝平鋪）" value="${labelVal}" data-field="label">
+                    <select class="shrink-0 w-32 text-xs border border-slate-200 rounded-lg px-1 py-1.5" data-field="color">${opts}</select>
+                </div>
+                <textarea rows="3" class="w-full text-xs border border-slate-200 rounded-lg px-2 py-1.5 font-mono" placeholder="每行一個照片網址&#10;https://..." data-field="photos">${photos}</textarea>
+                <button onclick="removeGroup(this)" class="text-[11px] text-red-500 font-bold">刪除此分組</button>
+            </div>`;
+        }
+
+        function addGroup() {
+            const wrap = document.getElementById('editorGroups');
+            wrap.insertAdjacentHTML('beforeend', groupRowHtml({ label: '', color: 'none', photos: [] }, wrap.children.length));
+        }
+        function removeGroup(btn) {
+            const row = btn.closest('[data-group]');
+            if (row) row.remove();
+        }
+
+        function readFormToData() {
+            const id = document.getElementById('editorService').value;
+            const title = document.getElementById('editorTitle').value.trim();
+            const groups = [];
+            document.querySelectorAll('#editorGroups [data-group]').forEach(row => {
+                const label = row.querySelector('[data-field="label"]').value.trim();
+                const color = row.querySelector('[data-field="color"]').value;
+                const photos = row.querySelector('[data-field="photos"]').value
+                    .split('\n').map(s => s.trim()).filter(Boolean);
+                if (photos.length || label) groups.push({ label, color, photos });
+            });
+            serviceData[id] = { title, groups };
+            syncDataBlock();
+            return id;
+        }
+
+        function applyAndPreview() {
+            const id = readFormToData();
+            if (id === 'licenses') { openLicenseGallery(); }
+            else { openServiceGallery(id, SERVICE_LABELS[id], EMO_MAP[id] || '🔧'); }
+        }
+
+        /* ---------- 匯出乾淨的可上傳檔案 ---------- */
+        function exportFinalHtml() {
+            readFormToData();   // 把當前輸入存進資料
+            syncDataBlock();    // 寫回 JSON 區塊，確保被序列化
+            const clone = document.documentElement.cloneNode(true);
+            ['serviceGalleryModal', 'lineModal', 'licenseGalleryModal', 'cardShareModal', 'adminModal']
+                .forEach(mid => { const el = clone.querySelector('#' + mid); if (el) el.classList.add('hidden'); });
+            ['serviceGalleryContent', 'licensePlaceholderGrid', 'editorGroups'].forEach(cid => {
+                const el = clone.querySelector('#' + cid); if (el) el.innerHTML = '';
+            });
+            const sel = clone.querySelector('#editorService'); if (sel) { sel.innerHTML = ''; sel.removeAttribute('data-ready'); }
+            const ti = clone.querySelector('#editorTitle'); if (ti) ti.setAttribute('value', '');
+            const html = '<!DOCTYPE html>\n' + clone.outerHTML;
+            const blob = new Blob([html], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a'); a.href = url; a.download = 'index.html'; a.click();
+            URL.revokeObjectURL(url);
+        }
     </script>
 </body>
 </html>
